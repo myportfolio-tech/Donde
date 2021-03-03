@@ -20,8 +20,7 @@ PIXABAY_URL = process.env.PIXABAY_URL;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname,'../client/views')));
-// app.use(express.static(path.join(__dirname,'../../dist')));
+app.use(express.static(path.join(__dirname,'../../dist')));
 // app.use(favicon(path.join(__dirname, '../client/views', 'favicon.ico')));
 
 
