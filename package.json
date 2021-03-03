@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon src/server/server.js",
     "test": "jest",
-    "build-dev": "webpack  --config ./webpack.dev.js"
+    "build-dev": "webpack  --config ./webpack.dev.js",
+    "build-prod": "webpack  --config ./webpack.prod.js"
   },
   "repository": {
     "type": "git",
