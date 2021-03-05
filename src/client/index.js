@@ -1,10 +1,7 @@
-require("@babel/register")({
-    extends: './.babelrc',
-    ignore: [/node_modules/],
-  });
+require("@babel/register");
 
-import {testDisplay} from './js/display'
+import {textDisplay} from './js/display'
 
 export {
-    testDisplay
+  textDisplay
 }

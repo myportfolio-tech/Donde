@@ -24,6 +24,23 @@ app.use(express.static(path.join(__dirname,'../../dist')));
 // app.use(favicon(path.join(__dirname, '../client/views', 'favicon.ico')));
 
 
+app.post('/weather', async (req, res) => {
 
+    const sent_url = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&lang=en&url=${req.body.url}&model=general`;
+    console.log(sent_url);
+  
+  
+    await axios
+      .get(sent_url)
+      .then((data) => {
+        console.log('data package', dataPackage);
+        res.send(dataPackage);
+      })
+  
+      .catch((error) => {
+        console.log('ERROR');
+        console.log(error);
+      });
+  });
 
 app.listen(port, () => console.log(`listening on port ${port}`));

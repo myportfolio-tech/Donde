@@ -1,6 +1,7 @@
 
-function testDisplay(){
-    console.log('This is from the test function');
+function textDisplay() {
+    console.log('Hello - I am display');
 }
 
-export { testDisplay}
+
+export { textDisplay }

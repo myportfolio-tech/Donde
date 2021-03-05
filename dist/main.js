@@ -91,11 +91,11 @@ var Client =
 /*!*****************************!*\
   !*** ./src/client/index.js ***!
   \*****************************/
-/*! exports provided: testDisplay */
+/*! exports provided: textDisplay */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_display__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/display */ \"./src/client/js/display.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"testDisplay\", function() { return _js_display__WEBPACK_IMPORTED_MODULE_0__[\"testDisplay\"]; });\n\n__webpack_require__(!(function webpackMissingModule() { var e = new Error(\"Cannot find module '@babel/register'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()))({\r\n    extends: './.babelrc',\r\n    ignore: [/node_modules/],\r\n  });\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://Client/./src/client/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_display__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/display */ \"./src/client/js/display.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"textDisplay\", function() { return _js_display__WEBPACK_IMPORTED_MODULE_0__[\"textDisplay\"]; });\n\n__webpack_require__(!(function webpackMissingModule() { var e = new Error(\"Cannot find module '@babel/register'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://Client/./src/client/index.js?");
 
 /***/ }),
 
@@ -103,11 +103,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_
 /*!**********************************!*\
   !*** ./src/client/js/display.js ***!
   \**********************************/
-/*! exports provided: testDisplay */
+/*! exports provided: textDisplay */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"testDisplay\", function() { return testDisplay; });\n\r\nfunction testDisplay(){\r\n    console.log('This is from the test function');\r\n}\r\n\r\n\n\n//# sourceURL=webpack://Client/./src/client/js/display.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"textDisplay\", function() { return textDisplay; });\n\r\nfunction textDisplay() {\r\n    console.log('Hello - I am display');\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack://Client/./src/client/js/display.js?");
 
 /***/ })
 
