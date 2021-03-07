@@ -12,13 +12,15 @@
         <h1>Donde</h1>
         <h2>where to?</h2>
         <div class="data-collection">
-            <input type="Where would we like to go?">
+            <input id="search-box">
             <input type="submit" id="go" value="go" onclick="return Client.textDisplay(event)" onsubmit="return Client.textDisplay(event)">
         </div>
 
     </div>
 
-
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTDtmLJEn9VIVt_Vo9Jzz_VEX-eKxknC4&libraries=places&callback=Client.activateAutoCompelete">
+</script>
 </div>
 </body>
 </html>
