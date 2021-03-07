@@ -11,7 +11,10 @@ async function passCoordinates() {
         },
         body: JSON.stringify({
             lng: inputBox.dataset.lng,
-            lat: inputBox.dataset.lat
+            lat: inputBox.dataset.lat,
+            city: inputBox.dataset.city,
+            country: inputBox.dataset.country
+
         })
 
     }).then(res => res.json()).then(data => {
