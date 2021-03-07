@@ -9,7 +9,7 @@ entry: "./src/client/index.js",
 output: {
     libraryTarget: "var",
     library: "Client",
-    filename: "main.js",
+    filename: "main-[contentHash].js",
     path: path.resolve(__dirname, "dist")
 },
 resolveLoader: {
