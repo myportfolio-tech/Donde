@@ -1,6 +1,8 @@
 const path = require('path');
 const express = require('express');
 const { json } = require('body-parser');
+const axios = require('axios');
+
 const app = express();
 
 
@@ -24,17 +26,16 @@ app.use(express.static(path.join(__dirname,'../../dist')));
 // app.use(favicon(path.join(__dirname, '../client/views', 'favicon.ico')));
 
 
-app.post('/weather', async (req, res) => {
+app.post('/call', async (req, res) => {
 
-    const sent_url = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&lang=en&url=${req.body.url}&model=general`;
-    console.log(sent_url);
-  
-  
-    await axios
-      .get(sent_url)
+console.log(req.body)
+weather_url = `https://api.weatherbit.io/v2.0/current?lat=${req.body.lat}&lon=${req.body.lng}&key=${process.env.WEATHERBIT_KEY}`
+   
+await axios
+      .get(weather_url)
       .then((data) => {
-        console.log('data package', dataPackage);
-        res.send(dataPackage);
+        // console.log('data package', data.data);
+        res.send(data.data);
       })
   
       .catch((error) => {
@@ -42,5 +43,6 @@ app.post('/weather', async (req, res) => {
         console.log(error);
       });
   });
+
 
 app.listen(port, () => console.log(`listening on port ${port}`));

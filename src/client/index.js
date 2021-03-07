@@ -1,9 +1,9 @@
 require("@babel/register");
 
-import {textDisplay} from './js/display'
+import {passCoordinates} from './js/clickGo'
 import {activateAutoCompelete} from './js/autocomplete'
 
 export {
-  textDisplay,
+  passCoordinates,
   activateAutoCompelete
 }
