@@ -64,6 +64,24 @@ function callAllApis()
 
 
 
+// function renderImages(images)
+//     {
+//     const holder = document.getElementById("image-holder");
+//     while (holder.firstChild) {
+//         holder.removeChild(holder.firstChild);
+//     }
+
+//     const arrayLength = images.length;
+//     for (var i = 0; i < arrayLength; i++) 
+//         {
+//             let imgItem = document.createElement('IMG');
+//             console.log(imgItem)
+//             imgItem.src = images[i].pictureURL
+//             holder.appendChild(imgItem);
+//         }
+//     }
+
+
 function renderImages(images)
     {
     const holder = document.getElementById("image-holder");
@@ -74,10 +92,18 @@ function renderImages(images)
     const arrayLength = images.length;
     for (var i = 0; i < arrayLength; i++) 
         {
+            let imgDiv = document.createElement('div');
+            
             let imgItem = document.createElement('IMG');
-            console.log(imgItem)
             imgItem.src = images[i].pictureURL
-            holder.appendChild(imgItem);
+            imgDiv.appendChild(imgItem);
+            
+            let authorDiv = document.createElement('div');
+            authorDiv.innerText = images[i].author
+            imgDiv.appendChild(authorDiv);
+
+            holder.appendChild(imgDiv);
+
         }
     }
 

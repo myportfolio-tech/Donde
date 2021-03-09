@@ -60,13 +60,15 @@ console.log(req.body)
 
 const pixabayUrl1 = `https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${req.body.city}+${req.body.state}&image_type=photo`
 const pixabayUrl2 = `https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${req.body.city}+${req.body.country}&image_type=photo`
+const pixabayUrl3 = `https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${req.body.state}+${req.body.country}&image_type=photo`
 
 const requestOne = axios.get(pixabayUrl1);
 const requestTwo = axios.get(pixabayUrl2);
+const requestThree = axios.get(pixabayUrl3);
 
-  await axios.all([requestOne, requestTwo])
+  await axios.all([requestOne, requestTwo, requestThree])
        .then(axios.spread((...data) => {
-        const totalResponseHits = data[0].data.hits.concat(data[1].data.hits);
+        const totalResponseHits = data[0].data.hits.concat(data[1].data.hits).concat(data[2].data.hits);
         images = createImagesObject(totalResponseHits);
         console.log(images);
    
@@ -87,19 +89,44 @@ const requestTwo = axios.get(pixabayUrl2);
 
 function createImagesObject(fullResponse){
     
-  let images = [];        
-  for (const image of fullResponse) {
-  
-        imageObject = {pictureURL: image.webformatURL, author: image.user, userLogo: image.userImageURL}
+  let images = []; 
+  let ids = [];  
+
+    for (const image of fullResponse) {
+
+        imageObject = {pictureURL: image.webformatURL, author: image.user}
         
-        if (! (images.includes(imageObject)))
+        if (! (ids.includes(image.id)))
           {
+ 
             images.push(imageObject);
+            ids.push(image.id)
           }
-      
+        
+        
       }
       return images
-  }
+}
+
+
+// function createImagesObject(fullResponse){
+    
+//   let images = []; 
+//   let ids = [];       
+//   for (const image of fullResponse) {
+
+//         ids.push(fullResponse.id)
+  
+//         imageObject = {pictureURL: image.webformatURL, author: image.user}
+        
+//         if (! (images.includes(imageObject)))
+//           {
+//             images.push(imageObject);
+//           }
+      
+//       }
+//       return images
+//   }
 
 
 
