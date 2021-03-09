@@ -58,7 +58,7 @@ async function callPixabay() {
 
 function callAllApis()
     {
-        passCoordinates();
+        //passCoordinates();
         callPixabay();
     }
 
@@ -76,7 +76,7 @@ function renderImages(images)
         {
             let imgItem = document.createElement('IMG');
             console.log(imgItem)
-            imgItem.src = images[i].picture
+            imgItem.src = images[i].pictureURL
             holder.appendChild(imgItem);
         }
     }

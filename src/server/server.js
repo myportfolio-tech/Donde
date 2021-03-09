@@ -3,7 +3,6 @@ const express = require('express');
 const { json } = require('body-parser');
 const axios = require('axios');
 const cors = require('cors');
-
 const app = express();
 
 
@@ -59,16 +58,21 @@ weather_url = `https://api.weatherbit.io/v2.0/current?lat=${req.body.lat}&lon=${
 
 console.log(req.body)
 
-pixabayUrl = `https://pixabay.com/api/?key=20462252-df3c282cc8150591166158d7d&q=${req.body.city}+${req.body.country}&image_type=photo`
-   
-  await axios
-       .get(pixabayUrl)
-       .then((data) => {
+const pixabayUrl1 = `https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${req.body.city}+${req.body.state}&image_type=photo`
+const pixabayUrl2 = `https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${req.body.city}+${req.body.country}&image_type=photo`
 
-        images = looper(data.data.hits);
+const requestOne = axios.get(pixabayUrl1);
+const requestTwo = axios.get(pixabayUrl2);
+
+  await axios.all([requestOne, requestTwo])
+       .then(axios.spread((...data) => {
+        const totalResponseHits = data[0].data.hits.concat(data[1].data.hits);
+        images = createImagesObject(totalResponseHits);
         console.log(images);
-         res.send(images);
-       })
+   
+        res.send(images);
+        //  res.send(data.data);
+       }))
   
        .catch((error) => {
          console.log('ERROR');
@@ -81,14 +85,18 @@ pixabayUrl = `https://pixabay.com/api/?key=20462252-df3c282cc8150591166158d7d&q=
  });
 
 
-function looper(pictures)
-  {
-    let images = [];
+function createImagesObject(fullResponse){
+    
+  let images = [];        
+  for (const image of fullResponse) {
+  
+        imageObject = {pictureURL: image.webformatURL, author: image.user, userLogo: image.userImageURL}
         
-    var arrayLength = pictures.length;
-    for (var i = 0; i < arrayLength; i++) 
-      {
-      images.push({picture: pictures[i].webformatURL, author: pictures[i].user, userLogo: pictures[i].userImageURL});
+        if (! (images.includes(imageObject)))
+          {
+            images.push(imageObject);
+          }
+      
       }
       return images
   }
