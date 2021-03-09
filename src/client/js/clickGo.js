@@ -64,11 +64,19 @@ function callAllApis()
 
 function renderImages(images)
     {
-    document.getElementById("one").src = images[0].picture;
-    document.getElementById("two").src = images[1].picture;
-    document.getElementById("three").src = images[2].picture;
-    document.getElementById("four").src = images[3].picture;
-    document.getElementById("five").src = images[4].picture;
+    const holder = document.getElementById("image-holder");
+    while (holder.firstChild) {
+        holder.removeChild(holder.firstChild);
+    }
+
+    const arrayLength = images.length;
+    for (var i = 0; i < arrayLength; i++) 
+        {
+            let imgItem = document.createElement('IMG');
+            console.log(imgItem)
+            imgItem.src = images[i].picture
+            holder.appendChild(imgItem);
+        }
     }
 
 
