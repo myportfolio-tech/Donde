@@ -42,6 +42,8 @@ async function callPixabay() {
         },
         body: JSON.stringify({
             city: inputBox.dataset.city,
+            county: inputBox.dataset.county,
+            state: inputBox.dataset.state,
             country: inputBox.dataset.country
         })
 

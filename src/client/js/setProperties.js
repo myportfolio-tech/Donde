@@ -2,24 +2,24 @@
 function setPros(googleResponse) 
     {
         const searchInput = document.getElementById('search-box');
-        const arrayLength = googleResponse.length;
-        for (var i = 0; i < arrayLength; i++) 
+
+        for (const response of googleResponse) 
         {
-            if (googleResponse[i].types.includes("locality"))
+            if (response.types.includes("locality"))
                 {
-                    searchInput.setAttribute('data-city', googleResponse[i].long_name);
+                    searchInput.setAttribute('data-city', response.long_name);
                 }
-            if (googleResponse[i].types.includes("administrative_area_level_1"))
+            if (response.types.includes("administrative_area_level_1"))
                 {
-                    searchInput.setAttribute('data-state', googleResponse[i].long_name);
+                    searchInput.setAttribute('data-state', response.long_name);
                 }
-            if (googleResponse[i].types.includes("administrative_area_level_2"))
+            if (response.types.includes("administrative_area_level_2"))
                 {
-                    searchInput.setAttribute('data-county', googleResponse[i].long_name);
+                    searchInput.setAttribute('data-county', response.long_name);
                 }
-            if (googleResponse[i].types.includes("country"))
+            if (response.types.includes("country"))
                 {
-                    searchInput.setAttribute('data-country', googleResponse[i].long_name);
+                    searchInput.setAttribute('data-country', response.long_name);
                 }
             
         };
