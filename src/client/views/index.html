@@ -13,14 +13,28 @@
         <h2>where to?</h2>
         <div class="data-collection">
             <input id="search-box">
-            <input type="submit" id="go" value="go" onclick="return Client.passCoordinates(event)" onsubmit="return Client.passCoordinates(event)">
+            <input type="submit" id="go" value="go" onclick="return Client.callAllApis(event)">
         </div>
 
-    </div>
+        <label for="departure">Departure:</label>
+        <input type="date" id="departure" name="trip-start" oninput="return Client.getDatesfromInput(event)">
+        <label for="return">Return:</label>
+        <input type="date" id="return" name="trip-start" oninput="return Client.getDatesfromInput(event)">
+
+        <div class="images">
+            <img src="/" id="one" alt="">
+            <img src="/" id="two" alt="">
+            <img src="/" id="three" alt="">
+            <img src="/" id="four" alt="">
+            <img src="/" id="five" alt="">
+        </div>
+
+</div>
 
 <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTDtmLJEn9VIVt_Vo9Jzz_VEX-eKxknC4&libraries=places&callback=Client.activateAutoCompelete">
 </script>
+
 </div>
 </body>
 </html>
