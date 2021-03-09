@@ -69,8 +69,6 @@ function renderImages(images)
     document.getElementById("three").src = images[2].picture;
     document.getElementById("four").src = images[3].picture;
     document.getElementById("five").src = images[4].picture;
-
-
     }
 
 
