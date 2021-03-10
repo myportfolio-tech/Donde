@@ -4,7 +4,7 @@ import {passCoordinates, callPixabay, callAllApis, renderImages} from './js/clic
 import {activateAutoComplete} from './js/autocomplete'
 import {getDatesfromInput} from './js/getDates'
 import {setPros} from './js/setProperties'
-import './styles/style.css'
+import './styles/carousel.css'
 import './styles/style.scss'
 
 export {

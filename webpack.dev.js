@@ -9,6 +9,9 @@ devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 8000,
+    headers: {
+        'Cache-Control': 'no-store'
+      }
   },
 entry: "./src/client/index.js",
 output: {
@@ -32,7 +35,8 @@ module: {
        {
             test: /\.scss$/,
             use: [ 'style-loader', 'css-loader', 'sass-loader' ]
-        } 
+        },
+
     ]
 },
 plugins: [

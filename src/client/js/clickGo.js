@@ -9,7 +9,7 @@ async function passCoordinates() {
 
 
     
-    fetch('/weather', {
+    fetch('http://localhost:5000/weather', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -33,8 +33,8 @@ async function passCoordinates() {
 async function callPixabay() {
     const inputBox = document.getElementById('search-box');
     console.log('Calling Pixabay')
-    
-    fetch('/pixabay', {
+
+    fetch('http://localhost:5000/pixabay', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
