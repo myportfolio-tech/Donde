@@ -1,12 +1,15 @@
 
 async function passCoordinates() {
     const inputBox = document.getElementById('search-box');
+
+
+
     console.log(inputBox.dataset.lng);
     console.log(inputBox.dataset.lat);
-    console.log(inputBox.dataset.city);
-    console.log(inputBox.dataset.country);
+
+
     
-    fetch('/call', {
+    fetch('/weather', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -14,10 +17,7 @@ async function passCoordinates() {
         },
         body: JSON.stringify({
             lng: inputBox.dataset.lng,
-            lat: inputBox.dataset.lat,
-            city: inputBox.dataset.city,
-            country: inputBox.dataset.country
-
+            lat: inputBox.dataset.lat
         })
 
     }).then(res => res.json()).then(data => {
@@ -58,28 +58,10 @@ async function callPixabay() {
 
 function callAllApis()
     {
-        //passCoordinates();
+        passCoordinates();
         callPixabay();
     }
 
-
-
-// function renderImages(images)
-//     {
-//     const holder = document.getElementById("image-holder");
-//     while (holder.firstChild) {
-//         holder.removeChild(holder.firstChild);
-//     }
-
-//     const arrayLength = images.length;
-//     for (var i = 0; i < arrayLength; i++) 
-//         {
-//             let imgItem = document.createElement('IMG');
-//             console.log(imgItem)
-//             imgItem.src = images[i].pictureURL
-//             holder.appendChild(imgItem);
-//         }
-//     }
 
 
 function renderImages(images)
@@ -101,6 +83,10 @@ function renderImages(images)
             let authorDiv = document.createElement('div');
             authorDiv.innerText = images[i].author
             imgDiv.appendChild(authorDiv);
+
+            let imgTags = document.createElement('div');
+            imgTags.innerText = images[i].tags
+            imgDiv.appendChild(imgTags);
 
             holder.appendChild(imgDiv);
 

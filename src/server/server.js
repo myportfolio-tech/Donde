@@ -29,17 +29,18 @@ app.use(cors());
 // app.use(favicon(path.join(__dirname, '../client/views', 'favicon.ico')));
 
 
-app.post('/call', async (req, res) => {
+app.post('/weather', async (req, res) => {
 
 console.log(req.body)
 weather_url = `https://api.weatherbit.io/v2.0/current?lat=${req.body.lat}&lon=${req.body.lng}&key=${process.env.WEATHERBIT_KEY}`
+
+
    
   await axios
        .get(weather_url)
        .then((data) => {
          console.log(data.data);
-        //  const requestPackage = createRequestPackage(data.data);
-        //  res.send(requestPackage);
+
          res.send(data.data);
        })
   
@@ -70,10 +71,8 @@ const requestThree = axios.get(pixabayUrl3);
        .then(axios.spread((...data) => {
         const totalResponseHits = data[0].data.hits.concat(data[1].data.hits).concat(data[2].data.hits);
         images = createImagesObject(totalResponseHits);
-        console.log(images);
-   
         res.send(images);
-        //  res.send(data.data);
+
        }))
   
        .catch((error) => {
@@ -94,7 +93,7 @@ function createImagesObject(fullResponse){
 
     for (const image of fullResponse) {
 
-        imageObject = {pictureURL: image.webformatURL, author: image.user}
+        imageObject = {pictureURL: image.webformatURL, author: image.user, tags:image.tags}
         
         if (! (ids.includes(image.id)))
           {
@@ -107,26 +106,6 @@ function createImagesObject(fullResponse){
       }
       return images
 }
-
-
-// function createImagesObject(fullResponse){
-    
-//   let images = []; 
-//   let ids = [];       
-//   for (const image of fullResponse) {
-
-//         ids.push(fullResponse.id)
-  
-//         imageObject = {pictureURL: image.webformatURL, author: image.user}
-        
-//         if (! (images.includes(imageObject)))
-//           {
-//             images.push(imageObject);
-//           }
-      
-//       }
-//       return images
-//   }
 
 
 
