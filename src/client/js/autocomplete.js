@@ -1,7 +1,7 @@
 import { setPros } from "./setProperties";
 
 
-async function activateAutoCompelete()
+async function activateAutoComplete()
     {
         const searchInput = document.getElementById('search-box');
         
@@ -26,5 +26,5 @@ async function activateAutoCompelete()
 
 
 
-export {activateAutoCompelete}
+export {activateAutoComplete}
 

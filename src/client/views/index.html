@@ -8,6 +8,7 @@
 </head>
 <body>
 <div class="main-container">
+    <h1>Hello </h1>
     <div class="main-header">
         <h1>Donde</h1>
         <h2>where to?</h2>
@@ -16,8 +17,6 @@
             <input type="submit" id="go" value="go" onclick="return Client.callAllApis(event)">
         </div>
     </div>
-    <div id="spacer">
-        hello
     </div id="date-picker">
         <label for="departure">Departure:</label>
         <input type="date" id="departure" name="trip-start" oninput="return Client.getDatesfromInput(event)">
@@ -28,7 +27,7 @@
         </div>
 </div>
 <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTDtmLJEn9VIVt_Vo9Jzz_VEX-eKxknC4&libraries=places&callback=Client.activateAutoCompelete">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTDtmLJEn9VIVt_Vo9Jzz_VEX-eKxknC4&libraries=places&callback=Client.activateAutoComplete">
 </script>
 
 </div>

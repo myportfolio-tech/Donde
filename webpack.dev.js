@@ -5,6 +5,11 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
 
 mode: "development",
+devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 8000,
+  },
 entry: "./src/client/index.js",
 output: {
     libraryTarget: "var",
@@ -12,16 +17,22 @@ output: {
     filename: "main-[contentHash].js",
     path: path.resolve(__dirname, "dist")
 },
-resolveLoader: {
-    moduleExtensions: ['-loader']
-  },
+
 module: {
     rules: [
+        {
+            test: /\.css$/,
+            use: ["style-loader", "css-loader"]
+        },
         {
             test: '/\js$/',
             exclude :/node_modules/,
             loader: "babel-loader"
-        }
+        },
+       {
+            test: /\.scss$/,
+            use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+        } 
     ]
 },
 plugins: [
