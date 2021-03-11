@@ -2,3 +2,27 @@
 h2 {
     color: blue;
 }
+
+.trip-info-window {
+  width: 50px;
+  height: 20px;
+  border: blue 2px solid;
+  margin: 10px 10px 0 10px;
+}
+
+.trip-info {
+  display: flex;
+  flex-direction: row;
+
+}
+
+
+input[type="date"]:before {
+    content: attr(placeholder) !important;
+    color: red;
+    margin-right: 0.5em;
+  }
+  input[type="date"]:focus:before,
+  input[type="date"]:valid:before {
+    content: "";
+  }

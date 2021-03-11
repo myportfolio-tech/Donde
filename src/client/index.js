@@ -2,7 +2,7 @@ require("@babel/register");
 
 import {passCoordinates, callPixabay, callAllApis, renderImages} from './js/clickGo'
 import {activateAutoComplete} from './js/autocomplete'
-import {getDatesfromInput} from './js/getDates'
+import {getDepartureDatesfromInput, getReturnDatesfromInput} from './js/getDates'
 import {setPros} from './js/setProperties'
 import {InnitialCarouselSetUp, setSlidePosition, moveToSlide} from './js/carousel'
 import './styles/carousel.css'
@@ -14,7 +14,8 @@ export {
   callPixabay,
   callAllApis,
   activateAutoComplete,
-  getDatesfromInput,
+  getDepartureDatesfromInput,
+  getReturnDatesfromInput,
   renderImages,
   setPros,
   InnitialCarouselSetUp,
