@@ -1,4 +1,6 @@
 
+import {InnitialCarouselSetUp} from './carousel'
+
 async function passCoordinates() {
     const inputBox = document.getElementById('search-box');
 
@@ -66,31 +68,27 @@ function callAllApis()
 
 function renderImages(images)
     {
-    const holder = document.getElementById("image-holder");
+    const holder = document.getElementById("carousel__track");
     while (holder.firstChild) {
         holder.removeChild(holder.firstChild);
     }
 
-    const arrayLength = images.length;
-    for (var i = 0; i < arrayLength; i++) 
+    
+    for (const image of images) 
         {
-            let imgDiv = document.createElement('div');
-            
+            let listItem = document.createElement('li');
+            listItem.classList.add('carousel__slide');
             let imgItem = document.createElement('IMG');
-            imgItem.src = images[i].pictureURL
-            imgDiv.appendChild(imgItem);
-            
-            let authorDiv = document.createElement('div');
-            authorDiv.innerText = images[i].author
-            imgDiv.appendChild(authorDiv);
+            imgItem.src = image.pictureURL
+            imgItem.classList.add('carousel__image')
+            listItem.appendChild(imgItem);
 
-            let imgTags = document.createElement('div');
-            imgTags.innerText = images[i].tags
-            imgDiv.appendChild(imgTags);
-
-            holder.appendChild(imgDiv);
+            holder.appendChild(listItem);
 
         }
+
+        holder.firstChild.classList.add('current-slide')
+        InnitialCarouselSetUp();
     }
 
 

@@ -4,9 +4,10 @@ import {passCoordinates, callPixabay, callAllApis, renderImages} from './js/clic
 import {activateAutoComplete} from './js/autocomplete'
 import {getDatesfromInput} from './js/getDates'
 import {setPros} from './js/setProperties'
+import {InnitialCarouselSetUp, setSlidePosition, moveToSlide} from './js/carousel'
 import './styles/carousel.css'
 import './styles/style.scss'
-import './js/carousel'
+
 
 export {
   passCoordinates,
@@ -15,5 +16,8 @@ export {
   activateAutoComplete,
   getDatesfromInput,
   renderImages,
-  setPros
+  setPros,
+  InnitialCarouselSetUp,
+  setSlidePosition,
+  moveToSlide
 }
