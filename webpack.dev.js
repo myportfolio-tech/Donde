@@ -9,6 +9,7 @@ devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 8000,
+    open: 'firefox',
     headers: {
         'Cache-Control': 'no-store'
       }
@@ -36,12 +37,26 @@ module: {
             test: /\.scss$/,
             use: [ 'style-loader', 'css-loader', 'sass-loader' ]
         },
-
+        {
+            test: /\.html$/,
+            use: [ 'html-loader' ]
+        },
+        {
+            test: /\.(svg|png|gif|jpg)$/,
+            use: {
+                loader: 'file-loader',
+                options: {
+                    name: "[name].[hash].[ext]",
+                    outputPath: "imgs",
+                    esModule: false
+                }
+            }
+        }
     ]
 },
 plugins: [
     new HtmlWebPackPlugin({
-        template: "./src/client/views/index.html",
+        template: "./src/client/views/template.html",
         filename: "./index.html"
     })
 ]

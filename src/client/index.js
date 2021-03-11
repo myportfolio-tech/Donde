@@ -6,6 +6,7 @@ import {getDatesfromInput} from './js/getDates'
 import {setPros} from './js/setProperties'
 import './styles/carousel.css'
 import './styles/style.scss'
+import './js/carousel'
 
 export {
   passCoordinates,

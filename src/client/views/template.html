@@ -22,35 +22,34 @@
         <label for="return">Return:</label>
         <input type="date" id="return" name="trip-start" oninput="return Client.getDatesfromInput(event)">
     </div>
-        <div class="images" id="image-holder">
+
             <div class="carousel">
                 <button class="carousel__button carousel__button--left">
                     <img src='../media/left.png' alt="left" >
                 </button>
                 <div class="carousel__track-container">
                     <ul class="carousel__track">
-                        <li class="carousel__slide">
-                            <img class="carousel__image" src="https://pixabay.com/get/geb25263411eb3db2f749738fc6b722e8cfbd64c6baec5ca85328c3d9ed10f371528f28becc14fafb9cf722e03200e0a1ab7f711206374ef1cfa7d47ec60dda31_640.jpg" alt="" class="src">
+                        <li class="carousel__slide current-slide">
+                            <img class="carousel__image" src="https://pixabay.com/get/geb25263411eb3db2f749738fc6b722e8cfbd64c6baec5ca85328c3d9ed10f371528f28becc14fafb9cf722e03200e0a1ab7f711206374ef1cfa7d47ec60dda31_640.jpg" alt="">
                         </li>
                         <li class="carousel__slide">
-                            <img class="carousel__image" src="https://pixabay.com/get/geb25263411eb3db2f749738fc6b722e8cfbd64c6baec5ca85328c3d9ed10f371528f28becc14fafb9cf722e03200e0a1ab7f711206374ef1cfa7d47ec60dda31_640.jpg" alt="" class="src">
+                            <img class="carousel__image" src="https://pixabay.com/get/g58747079f6e9f3506d87836963faf7e7895b15956f3063a8febeef4952bbd379268ed56bcdadbb7e97e2a6660aae0cdac25ae444cf1965b47be0adec7708cbc1_640.jpg" alt="">
                         </li>
                         <li class="carousel__slide">
-                            <img class="carousel__image" src="https://pixabay.com/get/geb25263411eb3db2f749738fc6b722e8cfbd64c6baec5ca85328c3d9ed10f371528f28becc14fafb9cf722e03200e0a1ab7f711206374ef1cfa7d47ec60dda31_640.jpg" alt="" class="src">
+                            <img class="carousel__image" src="https://pixabay.com/get/gdb9091ddfe94517fc18a232f3fa8b039c846d2bbbc2f3ec2c7319be6512beb8cebca47c2fb8c70d4e3c5e7282ee1ed597710c35090940c92278149922ee66641_640.jpg" alt="">
                         </li>
                     </ul>
                 </div>
                 <button class="carousel__button carousel__button--right">
-                <button class="carousel__button carousel__button--right">
-                    <img src='../src/client/media/left.png' alt="right" >
+                    <img src='../media/right.png' alt="right" >
                 </button>
                 <div class="carousel__nav">
-                    <button class="carousel__indicator"></button>
+                    <button class="carousel__indicator current-slide"></button>
                     <button class="carousel__indicator"></button>
                     <button class="carousel__indicator"></button>
                 </div>
             </div>
-
+         <div class="images" id="image-holder">
         </div>
 </div>
 <script async
