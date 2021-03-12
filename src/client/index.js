@@ -1,6 +1,6 @@
 require("@babel/register");
 
-import {passCoordinates, callPixabay, callMainApis, renderImages} from './js/callAPIs'
+import {passCoordinates, callPixabay, callMainApis, renderImages, renderWeather} from './js/callAPIs'
 import {activateAutoComplete} from './js/autocomplete'
 import {getDepartureDatesfromInput, getReturnDatesfromInput} from './js/getDates'
 import {setPros} from './js/setProperties'
@@ -17,6 +17,7 @@ export {
   getDepartureDatesfromInput,
   getReturnDatesfromInput,
   renderImages,
+  renderWeather,
   setPros,
   InnitialCarouselSetUp,
   setSlidePosition,

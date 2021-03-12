@@ -1,4 +1,7 @@
 
+//This functions ensures that the data items in the serach box are cleared
+// from the previous entry and the new data values are set
+
 function setPros(googleResponse) 
     {
         const searchInput = document.getElementById('search-box');

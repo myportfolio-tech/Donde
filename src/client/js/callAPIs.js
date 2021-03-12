@@ -23,7 +23,7 @@ async function passCoordinates() {
         })
 
     }).then(res => res.json()).then(data => {
-        console.log((data));
+        renderWeather(data);
         
         
         
@@ -92,4 +92,11 @@ function renderImages(images)
         InnitialCarouselSetUp();
     }
 
-export { passCoordinates, callPixabay, callMainApis, renderImages}
+
+
+function renderWeather(weather){
+    console.log('Weather' , weather);
+
+}
+
+export { passCoordinates, callPixabay, callMainApis, renderImages, renderWeather}

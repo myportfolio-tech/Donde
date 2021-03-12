@@ -1,6 +1,8 @@
 import { setPros } from "./setProperties";
 import { callMainApis } from './callAPIs'
 
+//The function activateAutoComplete is linked to the Google Place API in the index.html page
+// It trigers on <input> with id="search-box" when values entered
 
 async function activateAutoComplete()
     {

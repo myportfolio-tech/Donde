@@ -6,7 +6,9 @@ const cors = require('cors');
 const app = express();
 
 //Modules
-const CreateSearchItems = require('./pixabay')
+const CreateSearchItems = require('./pixabay');
+const createImagesObject = require('./imagesObject');
+const formWeatherObject = require('./weatherObject')
 
 // CONSTANTS FROM ENVIRONMENT 
 const dotenv = require('dotenv').config({path: __dirname+'/./../../.env'});
@@ -35,15 +37,11 @@ app.post('/weather', async (req, res) => {
 
 console.log(req.body)
 weather_url = `https://api.weatherbit.io/v2.0/current?lat=${req.body.lat}&lon=${req.body.lng}&key=${process.env.WEATHERBIT_KEY}`
-
-
    
   await axios
        .get(weather_url)
-       .then((data) => {
-        
-        weatherObject = formWeatherObject(data.data);
-         res.send(weatherObject);
+       .then((data) => {        
+         res.send(formWeatherObject(data.data));
        })
   
        .catch((error) => {
@@ -90,44 +88,6 @@ const requestThree = axios.get(pixabayUrl3);
     
  });
 
-
-function createImagesObject(fullResponse){
-    
-  let images = []; 
-  let ids = [];  
-
-    for (const image of fullResponse) {
-
-        imageObject = {pictureURL: image.webformatURL, author: image.user, tags:image.tags}
-        
-        if (! (ids.includes(image.id)))
-          {
- 
-            images.push(imageObject);
-            ids.push(image.id)
-          }
-        
-        
-      }
-      return images
-}
-
-
-function formWeatherObject(weather){
-
-  weatherResults = {
-    icon: weather['data'][0].weather.icon,
-    code: weather['data'][0].weather.code,
-    description: weather['data'][0].weather.description,
-    temp: weather['data'][0].temp,
-    wind: weather['data'][0].wind_spd,
-    iconUrl: `https://www.weatherbit.io/static/img/icons/${weather['data'][0].weather.code}.png`
-  }
-
-console.log(weatherResults)
-return weatherResults
-
-}
 
 
 app.listen(port, () => console.log(`listening on port ${port}`));
