@@ -61,13 +61,13 @@ async function callPixabay() {
 function callAllApis()
     {
         passCoordinates();
-        callPixabay();
     }
 
 
 
 function renderImages(images)
     {
+
     const holder = document.getElementById("carousel__track");
     while (holder.firstChild) {
         holder.removeChild(holder.firstChild);
@@ -90,6 +90,5 @@ function renderImages(images)
         holder.firstChild.classList.add('current-slide')
         InnitialCarouselSetUp();
     }
-
 
 export { passCoordinates, callPixabay, callAllApis, renderImages}

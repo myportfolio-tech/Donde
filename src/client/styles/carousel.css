@@ -3,7 +3,11 @@
     height: 400px;
     width: 80%;
     margin: 0 auto;
+    max-width: 800px;
+
 }
+
+
 
 .carousel__image {
     width: 100%;

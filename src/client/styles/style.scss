@@ -4,18 +4,47 @@ h2 {
 }
 
 .trip-info-window {
-  width: 50px;
+  width: 250px;
   height: 20px;
-  border: blue 2px solid;
   margin: 10px 10px 0 10px;
 }
 
 .trip-info {
   display: flex;
   flex-direction: row;
-
 }
 
+.search-box{
+  width: 460px;
+  border-radius: 5%;
+  margin-bottom: 10px;
+  height: 25px;
+  border: 1px red solid;
+  color: blue;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+} 
+
+.label-and-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  align-items: center;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+}
 
 input[type="date"]:before {
     content: attr(placeholder) !important;
@@ -26,3 +55,4 @@ input[type="date"]:before {
   input[type="date"]:valid:before {
     content: "";
   }
+

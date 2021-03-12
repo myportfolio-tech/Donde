@@ -7,13 +7,11 @@ let departureDate =  new Date(departing.value);
 const today = new Date();
 
 departureDate = new Date(departureDate.getTime() + departureDate.getTimezoneOffset() * 60000)
-const daystillTrip = departureDate.getDate() - today.getDate()
-
 const window1 = document.getElementById('window1');
+window1.textContent = GetDateOutput(departureDate);
+
+const daystillTrip = departureDate.getDate() - today.getDate()
 const window2 = document.getElementById('window2'); 
-
-
-window1.textContent = departureDate;
 window2.textContent = daystillTrip;
 
 }
@@ -48,15 +46,22 @@ const today = new Date();
 
 departureDate = new Date(departureDate.getTime() + departureDate.getTimezoneOffset() * 60000)
 returnDate = new Date(returnDate.getTime() + returnDate.getTimezoneOffset() * 60000)
+const window3 = document.getElementById('window3'); 
+window3.textContent = GetDateOutput(returnDate);
+
 
 const tripLength = returnDate.getDate() - departureDate.getDate()
-
-const window3 = document.getElementById('window3'); 
 const window4 = document.getElementById('window4');
-
-window3.textContent = returnDate;
 window4.textContent = tripLength;
 
+}
+
+
+function GetDateOutput(passedDate){
+    const departureMonth = passedDate.toLocaleString('default', { month: 'long' });
+    const departureDay = passedDate.getDay();
+    
+    return departureMonth.concat(" ").concat(departureDay)
 }
 
 

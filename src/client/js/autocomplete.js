@@ -1,4 +1,5 @@
 import { setPros } from "./setProperties";
+import { callPixabay } from './clickGo'
 
 
 async function activateAutoComplete()
@@ -19,6 +20,7 @@ async function activateAutoComplete()
             searchInput.setAttribute('data-lng', place.geometry.location.lng());
             searchInput.setAttribute('data-lat', place.geometry.location.lat());
             setPros(place.address_components);
+            callPixabay()
 
         });
 

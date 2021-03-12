@@ -7,42 +7,22 @@
     <title>Donde</title>
 </head>
 <body>
-<div class="main-container">
     <div class="main-header">
         <h1>Donde</h1>
         <h2>where to?</h2>
-        <div class="data-collection">
-            <input id="search-box">
-            <input type="date" id="departure" name="trip-start" placeholder="Departure" oninput="return Client.getDepartureDatesfromInput(event)">
-            <input type="date" id="return" name="trip-end" placeholder="Return"  oninput="return Client.getReturnDatesfromInput(event)">
-            <input type="submit" id="go" value="go" onclick="return Client.callAllApis(event)">
-        </div>
-        <div class="trip-info">
-            <div class="trip-info-window" id="window1">
-
-            </div>
-            <div class="trip-info-window" id="window2">
-
-            </div>
-            <div class="trip-info-window" id="window3">
-
-            </div>
-            <div class="trip-info-window" id="window4">
-
-            </div>
-
-        </div>
     </div>
 
-    <div class="main-results">
-        <div class="weather">
-
+<div class="main-container">
+    <div class="left-container">
+        <div class="data-collection">
+            <input class="search-box" id="search-box" placeholder="Where to...">
         </div>
 
-        <div class="carousel">
+        <div class="carousel" id="carousel">
             <button class="carousel__button carousel__button--left">
                 <img src='../media/left.png' alt="left" >
             </button>
+
             <div class="carousel__track-container">
                 <ul class="carousel__track" id="carousel__track">
                     <li class="carousel__slide current-slide">
@@ -50,10 +30,56 @@
                     </li>
                 </ul>
             </div>
+            
             <button class="carousel__button carousel__button--right">
                 <img src='../media/right.png' alt="right" >
             </button>
+
         </div>
+    </div>
+
+    <div class="right-container">
+        <div class="dates">
+            <input type="date" id="departure" name="trip-start" placeholder="Departure" oninput="return Client.getDepartureDatesfromInput(event)">
+            <input type="date" id="return" name="trip-end" placeholder="Return"  oninput="return Client.getReturnDatesfromInput(event)">
+            
+            <div class="label-and-info">
+                <h3 class="label">Leaving</h3>
+                <div class="trip-info-window" id="window1">
+                </div>
+            </div>
+            <div class="label-and-info">
+                <h3 class="label">Days till Trip</h3>
+                <div class="trip-info-window" id="window2">
+                </div>
+            </div>
+            <div class="label-and-info">
+                <h3 class="label">Returning</h3>
+                <div class="trip-info-window" id="window3">
+                </div>
+            </div>
+            <div class="label-and-info">
+                <h3 class="label">Trip Duration</h3>
+                <div class="trip-info-window" id="window4">
+                </div>
+            </div>
+
+
+
+
+            <input type="submit" id="Let's Search" value="go" onclick="return Client.callAllApis(event)">
+        </div>
+    </div>
+
+
+
+
+    <div class="main-results">
+        <div class="weather">
+
+        </div>
+
+
         
     </div>
 
