@@ -5,6 +5,8 @@ const axios = require('axios');
 const cors = require('cors');
 const app = express();
 
+//Modules
+const CreateSearchItems = require('./pixabay')
 
 // CONSTANTS FROM ENVIRONMENT 
 const dotenv = require('dotenv').config({path: __dirname+'/./../../.env'});
@@ -39,9 +41,9 @@ weather_url = `https://api.weatherbit.io/v2.0/current?lat=${req.body.lat}&lon=${
   await axios
        .get(weather_url)
        .then((data) => {
-         console.log(data.data);
-
-         res.send(data.data);
+        
+        weatherObject = formWeatherObject(data.data);
+         res.send(weatherObject);
        })
   
        .catch((error) => {
@@ -62,6 +64,9 @@ console.log(req.body)
 const pixabayUrl1 = `https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${req.body.city}+${req.body.state}&image_type=photo`
 const pixabayUrl2 = `https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${req.body.city}+${req.body.country}&image_type=photo`
 const pixabayUrl3 = `https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${req.body.state}+${req.body.country}&image_type=photo`
+
+const searchItesms = CreateSearchItems(req.body.city, req.body.county, req.body.state, req.body.country)
+console.log('Search Items: ', searchItesms)
 
 const requestOne = axios.get(pixabayUrl1);
 const requestTwo = axios.get(pixabayUrl2);
@@ -107,6 +112,22 @@ function createImagesObject(fullResponse){
       return images
 }
 
+
+function formWeatherObject(weather){
+
+  weatherResults = {
+    icon: weather['data'][0].weather.icon,
+    code: weather['data'][0].weather.code,
+    description: weather['data'][0].weather.description,
+    temp: weather['data'][0].temp,
+    wind: weather['data'][0].wind_spd,
+    iconUrl: `https://www.weatherbit.io/static/img/icons/${weather['data'][0].weather.code}.png`
+  }
+
+console.log(weatherResults)
+return weatherResults
+
+}
 
 
 app.listen(port, () => console.log(`listening on port ${port}`));

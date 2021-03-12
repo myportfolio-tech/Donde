@@ -58,9 +58,10 @@ async function callPixabay() {
 }
 
 
-function callAllApis()
+function callMainApis()
     {
         passCoordinates();
+        callPixabay()
     }
 
 
@@ -91,4 +92,4 @@ function renderImages(images)
         InnitialCarouselSetUp();
     }
 
-export { passCoordinates, callPixabay, callAllApis, renderImages}
+export { passCoordinates, callPixabay, callMainApis, renderImages}

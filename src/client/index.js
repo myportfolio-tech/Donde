@@ -1,6 +1,6 @@
 require("@babel/register");
 
-import {passCoordinates, callPixabay, callAllApis, renderImages} from './js/clickGo'
+import {passCoordinates, callPixabay, callMainApis, renderImages} from './js/callAPIs'
 import {activateAutoComplete} from './js/autocomplete'
 import {getDepartureDatesfromInput, getReturnDatesfromInput} from './js/getDates'
 import {setPros} from './js/setProperties'
@@ -12,7 +12,7 @@ import './styles/style.scss'
 export {
   passCoordinates,
   callPixabay,
-  callAllApis,
+  callMainApis,
   activateAutoComplete,
   getDepartureDatesfromInput,
   getReturnDatesfromInput,
