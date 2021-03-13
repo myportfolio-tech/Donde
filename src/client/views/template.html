@@ -39,6 +39,20 @@
     </div>
 
     <div class="right-container">
+
+        <div class="top-display">
+            <div class="icon" id="icon-image"></div>
+            <div class="display">
+                <div class="display-block">
+                    <div class="display-box" id="description"></div>
+                    <div class="display-box" id="temp"></div>
+                    <div class="display-box" id="wind"></div>
+                </div>
+            </div>
+        </div>
+
+
+        
         <div class="dates">
             <input type="date" id="departure" name="trip-start" placeholder="Departure" oninput="return Client.getDepartureDatesfromInput(event)">
             <input type="date" id="return" name="trip-end" placeholder="Return"  oninput="return Client.getReturnDatesfromInput(event)">
@@ -63,18 +77,6 @@
                 <div class="trip-info-window" id="window4">
                 </div>
             </div>
-        <div class="top-display">
-            <div class="icon" id="icon-image"></div>
-            <div class="display">
-                <div class="display-block">
-                    <div class="display-box" id="lat">Precipitation</div>
-                    <div class="display-box" id="temp">TEMP</div>
-                    <div class="display-box" id="wind">WIND</div>
-                </div>
-            </div>
-        </div>
-
-
 
 
             <input type="submit" id="Let's Search" value="Search" onclick="return Client.callAllApis(event)">

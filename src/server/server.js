@@ -9,6 +9,7 @@ const app = express();
 const CreateSearchItems = require('./pixabay');
 const createImagesObject = require('./imagesObject');
 const formWeatherObject = require('./weatherObject')
+const geoNamesServices = require('./geonames')
 
 // CONSTANTS FROM ENVIRONMENT 
 const dotenv = require('dotenv').config({path: __dirname+'/./../../.env'});
@@ -36,7 +37,7 @@ app.use(cors());
 app.post('/weather', async (req, res) => {
 
 console.log(req.body)
-weather_url = `https://api.weatherbit.io/v2.0/current?lat=${req.body.lat}&lon=${req.body.lng}&key=${process.env.WEATHERBIT_KEY}`
+weather_url = `https://api.weatherbit.io/v2.0/current?lat=${req.body.lat}&lon=${req.body.lng}&units=I&key=${process.env.WEATHERBIT_KEY}`
    
   await axios
        .get(weather_url)
@@ -55,33 +56,30 @@ weather_url = `https://api.weatherbit.io/v2.0/current?lat=${req.body.lat}&lon=${
  });
 
 
- app.post('/pixabay', async (req, res) => {
+app.post('/pixabay', async (req, res) => {
 
-console.log(req.body)
 
-const pixabayUrl1 = `https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${req.body.city}+${req.body.state}&image_type=photo`
-const pixabayUrl2 = `https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${req.body.city}+${req.body.country}&image_type=photo`
-const pixabayUrl3 = `https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${req.body.state}+${req.body.country}&image_type=photo`
 
-const searchItesms = CreateSearchItems(req.body.city, req.body.county, req.body.state, req.body.country)
-console.log('Search Items: ', searchItesms)
+// geoNamesServices(req)
+// .then((data) =>{
+//       console.log('geoNames Response', data);
+//     })
 
-const requestOne = axios.get(pixabayUrl1);
-const requestTwo = axios.get(pixabayUrl2);
-const requestThree = axios.get(pixabayUrl3);
+const newURL = await geoNamesServices(req);
+console.log(newURL);
 
-  await axios.all([requestOne, requestTwo, requestThree])
-       .then(axios.spread((...data) => {
-        const totalResponseHits = data[0].data.hits.concat(data[1].data.hits).concat(data[2].data.hits);
-        images = createImagesObject(totalResponseHits);
-        res.send(images);
+//   await axios.all([requestOne, requestTwo, requestThree])
+//        .then(axios.spread((...data) => {
+//         const totalResponseHits = data[0].data.hits.concat(data[1].data.hits).concat(data[2].data.hits);
+//         images = createImagesObject(totalResponseHits);
+//         res.send(images);
 
-       }))
+//        }))
   
-       .catch((error) => {
-         console.log('ERROR');
-         console.log(error);
-       });
+//        .catch((error) => {
+//          console.log('ERROR');
+//          console.log(error);
+//        });
 
 
 

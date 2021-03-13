@@ -42,12 +42,13 @@ module: {
             use: [ 'html-loader' ]
         },
         {
-            test: /\.(svg|png|gif|jpg)$/,
+            test: /\.(png|jpg)$/,
             use: {
                 loader: 'file-loader',
                 options: {
-                    name: "[name].[hash].[ext]",
-                    outputPath: "imgs",
+                    name: "[name].[ext]",
+                    outputPath: "img/",
+                    publicPath: 'img/',
                     esModule: false
                 }
             }

@@ -43,10 +43,13 @@ async function callPixabay() {
             'Accept': 'application/json'
         },
         body: JSON.stringify({
+            lng: inputBox.dataset.lng,
+            lat: inputBox.dataset.lat,
             city: inputBox.dataset.city,
             county: inputBox.dataset.county,
             state: inputBox.dataset.state,
-            country: inputBox.dataset.country
+            country: inputBox.dataset.country,
+            code: inputBox.dataset.countrycode
         })
 
     }).then(res => res.json()).then(data => {
@@ -95,7 +98,16 @@ function renderImages(images)
 
 
 function renderWeather(weather){
-    console.log('Weather' , weather);
+    const iconImage = document.getElementById("icon-image");
+    const description = document.getElementById("description");
+    const temp = document.getElementById("temp");
+    const wind = document.getElementById("wind");
+
+
+    iconImage.innerHTML = `<img src="${weather.iconUrl}" alt="">`
+    description.innerHTML = weather.description
+    temp.innerHTML = `${weather.temp} &#8457;`
+    wind.innerHTML = `wind at ${weather.wind} m/h`
 
 }
 

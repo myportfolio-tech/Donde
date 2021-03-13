@@ -10,6 +10,7 @@ function setPros(googleResponse)
         searchInput.setAttribute('data-state', '');
         searchInput.setAttribute('data-county', '');
         searchInput.setAttribute('data-country', '');
+        searchInput.setAttribute('data-countrycode', '');
 
         for (const response of googleResponse) 
         {   
@@ -37,6 +38,7 @@ function setPros(googleResponse)
             if (response.types.includes("country"))
                 {
                     searchInput.setAttribute('data-country', response.long_name);
+                    searchInput.setAttribute('data-countrycode', response.short_name);
                 }
 
         };

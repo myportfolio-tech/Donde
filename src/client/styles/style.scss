@@ -66,6 +66,11 @@ h2, h4 {
   flex-direction: column;
 }
 
+.top-display {
+  display: flex;
+  flex-direction: row;
+}
+
 input[type="date"]:before {
     content: attr(placeholder) !important;
     color: red;
@@ -76,3 +81,7 @@ input[type="date"]:before {
     content: "";
   }
 
+.dates {
+  display: flex;
+  flex-direction: column;
+}
