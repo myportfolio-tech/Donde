@@ -10,13 +10,13 @@ function createImagesObject(fullResponse){
           
           if (! (ids.includes(image.id)))
             {
-   
               images.push(imageObject);
               ids.push(image.id)
             }
           
           
         }
+        // console.log(images);
         return images
   }
 
