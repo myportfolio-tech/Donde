@@ -40,12 +40,12 @@ function processResults(geoNamesResponse){
     for (const location of geoNamesResponse){
 
         if (location.fclName == 'city, village,...' && location.fcodeName == 'capital of a political entity'){
-            cities.capital = location.name;
+            cities.capital = location.name.split(' ').join('%20');
             continue;
         }
 
         if (location.fclName == 'city, village,...' && location.fcodeName != 'capital of a political entity'){
-            cities.secondCity = location.name;
+            cities.secondCity = location.name.split(' ').join('%20');
             continue;
         }
         

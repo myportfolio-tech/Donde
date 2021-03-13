@@ -9,7 +9,9 @@ const app = express();
 const CreateSearchItems = require('./pixabay');
 const createImagesObject = require('./imagesObject');
 const formWeatherObject = require('./weatherObject')
-const geoNamesServices = require('./geonames')
+const geoNamesServices = require('./geonames');
+const { Console } = require('console');
+const { response } = require('express');
 
 // CONSTANTS FROM ENVIRONMENT 
 const dotenv = require('dotenv').config({path: __dirname+'/./../../.env'});
@@ -58,21 +60,39 @@ weather_url = `https://api.weatherbit.io/v2.0/current?lat=${req.body.lat}&lon=${
 
 app.post('/pixabay', async (req, res) => {
 
-
-
-// geoNamesServices(req)
-// .then((data) =>{
-//       console.log('geoNames Response', data);
-//     })
-
 const newURL = await geoNamesServices(req);
-console.log(newURL);
+// console.log(newURL);
 
-//   await axios.all([requestOne, requestTwo, requestThree])
+const urlOne = newURL[0];
+const urlTwo = newURL[1];
+
+// console.log(urlOne)
+// console.log(urlTwo)
+
+const responseOne = await axios.get(urlOne)
+const responseTwo = await axios.get(urlTwo)
+
+
+const totalResponseHits = responseOne.data.hits.concat(responseTwo.data.hits);
+const images = createImagesObject(totalResponseHits);
+res.send(images);
+
+// .then((data) => {        
+//   console.log(data);
+// })
+
+// .catch((error) => {
+//   console.log('ERROR');
+//   console.log(error);
+// });
+
+
+
+// await axios.all(newURL)
 //        .then(axios.spread((...data) => {
-//         const totalResponseHits = data[0].data.hits.concat(data[1].data.hits).concat(data[2].data.hits);
-//         images = createImagesObject(totalResponseHits);
-//         res.send(images);
+//          console.log(data);
+//         // const totalResponseHits = data[0].data.hits.concat(data[1].data.hits);
+
 
 //        }))
   
