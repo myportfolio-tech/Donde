@@ -1,7 +1,10 @@
 @import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@600&display=swap');
+
 
 body {
   background-color: $themeColor4;
+  font-family: 'Hind', sans-serif;
 }
 
 h1 {
@@ -9,6 +12,19 @@ h1 {
 }
 h2, h4 {
     color: $themeColor3;
+    height: 1em;
+
+}
+
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 20%;
+  font-family: inherit;
+
+font-size: 25px;
 }
 
 .trip-info-window {
@@ -23,17 +39,13 @@ h2, h4 {
 }
 
 .search-box{
-  width: 600px;
-  border-radius: 5%;
+  width: 580px;
   margin-bottom: 10px;
   height: 35px;
   border-radius: 24px !important;
   border: 1px solid transparent !important;
   font-family: inherit !important;
-  font-size: inherit !important;
-  font-weight: inherit !important;
-  line-height: inherit !important;
-  margin: -1px !important;
+  font-size: 20px;
   outline: none !important;
   overflow: visible !important;
   padding: 0px !important;
@@ -64,11 +76,15 @@ h2, h4 {
 .right-container {
   display: flex;
   flex-direction: column;
+  width: 300px;
+  margin-left: 40px;
+  padding-left: 10px;
 }
 
 .top-display {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
 }
 
 input[type="date"]:before {
@@ -91,4 +107,30 @@ input[type="date"]:before {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
+}
+
+.input-dates {
+  width: 200px;
+}
+
+.search-button {
+  width: 80px;
+  border-radius: 12px;
+  border: blue solid 4px;
+}
+
+.main-weather-container {
+  display: flex;
+  height: 150px;
+  overflow: hidden;
+}
+
+.weather {
+  padding: 0;
+  height: 40px;
+}
+
+
+.display-block {
+  height: 150px;
 }

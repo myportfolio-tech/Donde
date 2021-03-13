@@ -2,6 +2,9 @@
 function InnitialCarouselSetUp()
     {
         const track = document.querySelector('.carousel__track');
+        const currentSlide = track.querySelector('.current-slide');
+        lazyLoadImage(currentSlide);
+
         const slides = Array.from(track.children);
         const nextButton = document.querySelector('.carousel__button--right');
         const prevButton = document.querySelector('.carousel__button--left');
@@ -13,7 +16,9 @@ function InnitialCarouselSetUp()
         nextButton.addEventListener('click', e => {
             const currentSlide = track.querySelector('.current-slide');
             const nextSlide = currentSlide.nextElementSibling;
-        
+            console.log(nextSlide);
+            
+            lazyLoadImage(nextSlide);
             moveToSlide(track, currentSlide, nextSlide);
         
         });
@@ -23,6 +28,7 @@ function InnitialCarouselSetUp()
             
             const currentSlide = track.querySelector('.current-slide');
             const prevSlide = currentSlide.previousElementSibling;
+
         
             moveToSlide(track, currentSlide, prevSlide);
         
@@ -40,6 +46,10 @@ function setSlidePosition(slide, index){
 } 
 
 
+function lazyLoadImage(currentSlide){
+    console.log('CURRENT SLIDE: ', currentSlide.firstChild);
+    currentSlide.firstChild.src = currentSlide.firstChild.dataset.src;
+}
 
 function moveToSlide (track, currentSlide, targetSlide){
     track.style.transform = 'translateX(-' + targetSlide.style.left + ')'

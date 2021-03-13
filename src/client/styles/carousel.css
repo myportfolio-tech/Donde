@@ -1,7 +1,7 @@
 .carousel {
     position: relative;
     height: 400px;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     max-width: 800px;
 
@@ -20,6 +20,7 @@
     height: 100%;
     position: relative;
     overflow: hidden;
+
 }
 
 .carousel__track {
