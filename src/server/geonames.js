@@ -13,22 +13,13 @@ async function geoNamesServices(req){
     geoURL = `http://api.geonames.org/searchJSON?country=${req.body.code}&maxRows=10&&username=${username}`
     // console.log(geoURL)
     
-    await axios
-    .get(geoURL)
-    .then((data) => {       
-        cities = processResults(data.data.geonames);
-        console.log('CITIES', cities);
+    const geoResponse = await axios.get(geoURL)
+    const cities = processResults(geoResponse.data.geonames);
+    console.log('CITIES', cities);
         
     return [`https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${cities.capital}+${req.body.country}&image_type=photo`, 
             `https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${cities.secondCity}+${req.body.country}&image_type=photo`]
 
-
-    })
-
-    .catch((error) => {
-      console.log('ERROR');
-      console.log(error);
-    });
 
 
 }
@@ -38,9 +29,6 @@ async function geoNamesServices(req){
         `https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${req.body.city}+${req.body.country}&image_type=photo`]}
     
 }       
-
-
-function 
 
 
 
