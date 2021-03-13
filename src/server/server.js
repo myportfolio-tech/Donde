@@ -74,7 +74,7 @@ const responseTwo = await axios.get(urlTwo)
 
 
 const totalResponseHits = responseOne.data.hits.concat(responseTwo.data.hits);
-const images = createImagesObject(totalResponseHits);
+const images = await createImagesObject(totalResponseHits);
 res.send(images);
 
 // .then((data) => {        

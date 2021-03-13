@@ -1,5 +1,5 @@
 
-function createImagesObject(fullResponse){
+async function createImagesObject(fullResponse){
     
     let images = []; 
     let ids = [];  
