@@ -4,6 +4,7 @@ function InnitialCarouselSetUp()
 
         const track = document.querySelector('.carousel__track');
         const currentSlide = track.querySelector('.current-slide');
+        
         lazyLoadImage(currentSlide);
         setAuthorTags(currentSlide);
 
@@ -35,6 +36,7 @@ function InnitialCarouselSetUp()
             
             lazyLoadImage(prevSlide);
             moveToSlide(track, currentSlide, prevSlide);
+            
             setAuthorTags(prevSlide);
         
         });

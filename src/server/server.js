@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 
 //Modules
-const CreateSearchItems = require('./pixabay');
+// const CreateSearchItems = require('./pixabay');
 const createImagesObject = require('./imagesObject');
 const formWeatherObject = require('./weatherObject')
 const geoNamesServices = require('./geonames');
@@ -58,7 +58,6 @@ weather_url = `https://api.weatherbit.io/v2.0/current?lat=${req.body.lat}&lon=${
 app.post('/pixabay', async (req, res) => {
 
 const newURL = await geoNamesServices(req);
-// console.log(newURL);
 
 const urlOne = newURL[0];
 const urlTwo = newURL[1];
