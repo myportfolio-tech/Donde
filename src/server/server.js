@@ -66,8 +66,8 @@ const newURL = await geoNamesServices(req);
 const urlOne = newURL[0];
 const urlTwo = newURL[1];
 
-// console.log(urlOne)
-// console.log(urlTwo)
+console.log('URL One:' ,urlOne)
+console.log('URL Two:' ,urlTwo)
 
 const responseOne = await axios.get(urlOne)
 const responseTwo = await axios.get(urlTwo)

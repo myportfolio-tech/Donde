@@ -83,8 +83,10 @@ function renderImages(images)
             let listItem = document.createElement('li');
             listItem.classList.add('carousel__slide');
             let imgItem = document.createElement('IMG');
+            
+            // Property used for lazy loading
             imgItem.setAttribute('data-src', image.pictureURL);
-            // imgItem.src = image.pictureURL
+
             imgItem.classList.add('carousel__image')
             listItem.appendChild(imgItem);
 

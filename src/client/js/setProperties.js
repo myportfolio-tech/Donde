@@ -17,28 +17,30 @@ function setPros(googleResponse)
             //city
             if (response.types.includes("locality"))
                 {
-                    searchInput.setAttribute('data-city', response.long_name);
+                    searchInput.setAttribute('data-city', response.long_name.split(' ').join('%20'));
+                    
                 }
 
             
             //State
             if (response.types.includes("administrative_area_level_1"))
                 {
-                    searchInput.setAttribute('data-state', response.long_name);
+                    searchInput.setAttribute('data-state', response.long_name.split(' ').join('%20'));
                 }
 
                 
             //County
             if (response.types.includes("administrative_area_level_2"))
                 {
-                    searchInput.setAttribute('data-county', response.long_name);
+                    searchInput.setAttribute('data-county', response.long_name.split(' ').join('%20'));
                 }
 
             //Country
             if (response.types.includes("country"))
                 {
-                    searchInput.setAttribute('data-country', response.long_name);
-                    searchInput.setAttribute('data-countrycode', response.short_name);
+                    searchInput.setAttribute('data-country', response.long_name.split(' ').join('%20'));
+                    searchInput.setAttribute('data-countrycode', response.short_name.split(' ').join('%20'));
+                    console.log('Country', response.long_name.split(' ').join('%20'));
                 }
 
         };
