@@ -52,10 +52,7 @@ weather_url = `https://api.weatherbit.io/v2.0/current?lat=${req.body.lat}&lon=${
          console.log(error);
        });
 
-
-
-    
- });
+});
 
 
 app.post('/pixabay', async (req, res) => {

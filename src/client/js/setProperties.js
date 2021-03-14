@@ -8,7 +8,6 @@ function setPros(googleResponse)
         
         searchInput.setAttribute('data-city', '');
         searchInput.setAttribute('data-state', '');
-        searchInput.setAttribute('data-county', '');
         searchInput.setAttribute('data-country', '');
         searchInput.setAttribute('data-countrycode', '');
 
@@ -26,13 +25,6 @@ function setPros(googleResponse)
             if (response.types.includes("administrative_area_level_1"))
                 {
                     searchInput.setAttribute('data-state', response.long_name.split(' ').join('%20'));
-                }
-
-                
-            //County
-            if (response.types.includes("administrative_area_level_2"))
-                {
-                    searchInput.setAttribute('data-county', response.long_name.split(' ').join('%20'));
                 }
 
             //Country
