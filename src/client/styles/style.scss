@@ -134,3 +134,24 @@ input[type="date"]:before {
 .display-block {
   height: 150px;
 }
+
+
+.image-info {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  align-items: center;
+  justify-content: stretch;
+  height: 20px;
+  border: red solid 2px;
+  width: 98%;
+  margin-top: 10px;
+}
+
+.author {
+  padding: 5px;
+}
+
+.tags {
+  padding: 5px;
+}

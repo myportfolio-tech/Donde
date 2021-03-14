@@ -16,7 +16,7 @@ async function createImagesObject(fullResponse){
           
           
         }
-        console.log(images);
+        // console.log(images);
         return images
   }
 

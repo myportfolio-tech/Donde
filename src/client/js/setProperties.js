@@ -17,7 +17,6 @@ function setPros(googleResponse)
             if (response.types.includes("locality"))
                 {
                     searchInput.setAttribute('data-city', response.long_name.split(' ').join('%20'));
-                    
                 }
 
             

@@ -86,6 +86,8 @@ function renderImages(images)
             
             // Property used for lazy loading
             imgItem.setAttribute('data-src', image.pictureURL);
+            imgItem.setAttribute('data-author', image.author);
+            imgItem.setAttribute('data-tags', image.tags);
 
             imgItem.classList.add('carousel__image')
             listItem.appendChild(imgItem);
