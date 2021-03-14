@@ -65,47 +65,21 @@ const newURL = await geoNamesServices(req);
 
 const urlOne = newURL[0];
 const urlTwo = newURL[1];
+const urlThree = newURL[2];
 
 console.log('URL One:' ,urlOne)
 console.log('URL Two:' ,urlTwo)
+console.log('URL Two:' ,urlThree)
 
-const responseOne = await axios.get(urlOne)
-const responseTwo = await axios.get(urlTwo)
+const responseOne = await axios.get(urlOne);
+const responseTwo = await axios.get(urlTwo);
+const responseThree = await axios.get(urlThree);
 
 
-const totalResponseHits = responseOne.data.hits.concat(responseTwo.data.hits);
+const totalResponseHits = responseOne.data.hits.concat(responseTwo.data.hits).concat(responseThree.data.hits);
 const images = await createImagesObject(totalResponseHits);
 res.send(images);
 
-// .then((data) => {        
-//   console.log(data);
-// })
-
-// .catch((error) => {
-//   console.log('ERROR');
-//   console.log(error);
-// });
-
-
-
-// await axios.all(newURL)
-//        .then(axios.spread((...data) => {
-//          console.log(data);
-//         // const totalResponseHits = data[0].data.hits.concat(data[1].data.hits);
-
-
-//        }))
-  
-//        .catch((error) => {
-//          console.log('ERROR');
-//          console.log(error);
-//        });
-
-
-
-    
- });
-
-
+});
 
 app.listen(port, () => console.log(`listening on port ${port}`));
