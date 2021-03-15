@@ -103,6 +103,10 @@ function renderImages(images)
 
 
 function renderWeather(weather){
+    
+    const label = document.getElementById("weather-time");
+    label.style.display = "block";
+
     const iconImage = document.getElementById("icon-image");
     const description = document.getElementById("description");
     const temp = document.getElementById("temp");

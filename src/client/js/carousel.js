@@ -69,8 +69,8 @@ function moveToSlide (track, currentSlide, targetSlide){
 function setAuthorTags(slide){
     const author = document.getElementById('author');
     const tags = document.getElementById('tags');
-    author.innerHTML = slide.firstChild.dataset.author
-    tags.innerHTML = slide.firstChild.dataset.tags
+    author.innerHTML = `<span class="author-heading">Author:</span>${slide.firstChild.dataset.author}`
+    tags.innerHTML = `<span class="author-heading">Tags:</span>${slide.firstChild.dataset.tags}`
 }
 
 export {InnitialCarouselSetUp, setSlidePosition, moveToSlide}

@@ -8,14 +8,17 @@ body {
 }
 
 h1 {
-    color: $themeColor2;
+    color: $themeColor1;
 }
 h2, h4 {
-    color: $themeColor3;
+    color: $themeColor2;
     height: 1em;
 
 }
 
+h3 {
+  color: $themeColor3;
+}
 
 .main-header {
   display: flex;
@@ -31,6 +34,7 @@ font-size: 25px;
   width: 250px;
   height: 20px;
   margin: 10px 10px 0 10px;
+  color: $themeColor2;
 }
 
 .trip-info {
@@ -51,7 +55,7 @@ font-size: 25px;
   padding: 0px !important;
   text-align: inherit !important;
   text-decoration: none !important;
-
+  color: $themeColor3;
 }
 
 .main-container {
@@ -64,6 +68,7 @@ font-size: 25px;
   flex-direction: row;
   align-items: center;
   height: 25px;
+  margin-bottom: 10px;
 }
 
 .left-container {
@@ -89,7 +94,7 @@ font-size: 25px;
 
 input[type="date"]:before {
     content: attr(placeholder) !important;
-    color: red;
+    color: $themeColor3;
     margin-right: 0.5em;
   }
   input[type="date"]:focus:before,
@@ -111,6 +116,7 @@ input[type="date"]:before {
 
 .input-dates {
   width: 200px;
+  margin-bottom: 10px;
 }
 
 .search-button {
@@ -121,13 +127,20 @@ input[type="date"]:before {
 
 .main-weather-container {
   display: flex;
-  height: 150px;
+  height: 120px;
   overflow: hidden;
 }
 
 .weather {
   padding: 0;
   height: 40px;
+}
+
+.weather-time {
+  padding: 0;
+  height: 40px;
+  display: none;
+  margin-bottom: 5px;
 }
 
 
@@ -143,15 +156,41 @@ input[type="date"]:before {
   align-items: center;
   justify-content: stretch;
   height: 20px;
-  border: red solid 2px;
   width: 98%;
   margin-top: 10px;
+  overflow: hidden;
 }
 
 .author {
   padding: 5px;
+  color: $themeColor2;
+ 
+}
+
+.author-heading {
+  padding: 5px;
+  color: $themeColor3;
 }
 
 .tags {
   padding: 5px;
+}
+
+.pickers {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.label {
+  color: $themeColor3;
+}
+
+.trip-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-image {
+  width: 50px;
 }

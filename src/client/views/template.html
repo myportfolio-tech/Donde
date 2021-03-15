@@ -30,7 +30,7 @@
                 <div class="carousel__track-container">
                     <ul class="carousel__track" id="carousel__track">
                         <li class="carousel__slide current-slide">
-                            <img class="carousel__image" src="https://pixabay.com/get/geb25263411eb3db2f749738fc6b722e8cfbd64c6baec5ca85328c3d9ed10f371528f28becc14fafb9cf722e03200e0a1ab7f711206374ef1cfa7d47ec60dda31_640.jpg" alt="">
+                            <img class="carousel__image" src="../media/start1.svg" alt="">
                         </li>
                     </ul>
                 </div>
@@ -40,8 +40,10 @@
                 </button>
             </div>
             <div class="image-info">
-                <div class="author" id="author"></div>
-                <div class="tags" id="tags"></div>
+                <div class="author" id="author">
+                </div>
+                <div class="author" id="tags">
+                </div>
             </div>
         </div>
     
@@ -51,7 +53,7 @@
                 <div class="weather">
                     <h2>Weather</h2>
                 </div>
-                <div class="weather">
+                <div class="weather-time" id="weather-time">
                     <h3>Right Now</h3>
                 </div>
                 <div class="main-weather-container">
@@ -68,32 +70,43 @@
 
             
             <div class="dates">
-                <input type="date" class="input-dates" id="departure" name="trip-start" placeholder="Departure" oninput="return Client.getDepartureDatesfromInput(event)">
-                <input type="date" class="input-dates" id="return" name="trip-end" placeholder="Return"  oninput="return Client.getReturnDatesfromInput(event)">
+
+                <div class="pickers">
+                    <input type="date" class="input-dates" id="departure" name="trip-start" placeholder="Departure" oninput="return Client.getDepartureDatesfromInput(event)">
+                    <input type="date" class="input-dates" id="return" name="trip-end" placeholder="Return"  oninput="return Client.getReturnDatesfromInput(event)">
+                </div>
                 
-                <div class="label-and-info">
-                    <h4 class="label">Leaving</h4>
-                    <div class="trip-info-window" id="window1">
+                <div class="trip-info">
+                    <div class="label-and-info">
+                        <h4 class="label">Departure</h4>
+                        <div class="trip-info-window" id="window1">
+                        </div>
                     </div>
-                </div>
-                <div class="label-and-info">
-                    <h4 class="label">Days till Trip</h4>
-                    <div class="trip-info-window" id="window2">
+                    <div class="label-and-info">
+                        <h4 class="label">In </h4>
+                        <div class="trip-info-window" id="window2">
+                        </div>
                     </div>
-                </div>
-                <div class="label-and-info">
-                    <h4 class="label">Returning</h4>
-                    <div class="trip-info-window" id="window3">
+                    <div class="label-and-info">
+                        <h4 class="label">Returning</h4>
+                        <div class="trip-info-window" id="window3">
+                        </div>
                     </div>
-                </div>
-                <div class="label-and-info">
-                    <h4 class="label">Trip Duration</h4>
-                    <div class="trip-info-window" id="window4">
+                    <div class="label-and-info">
+                        <h4 class="label">Trip Duration</h4>
+                        <div class="trip-info-window" id="window4">
+                        </div>
                     </div>
                 </div>
 
 
-                <input class="search-button" type="submit" id="Let's Search" value="Search" onclick="return Client.callAllApis(event)">
+
+                <!-- <input class="search-button" type="image" src="../media/search.svg" onclick="return Client.callAllApis(event)">  -->
+                <button type="submit" onclick="return Client.callAllApis(event)">
+                    <img class="button-image" src="../media/search.svg" alt="Save icon"/>
+                </button>
+                    <!-- <input type="image" src="../media/search.svg" alt="Submit" width="48" height="48" > -->
+
             </div>
     </div>
 

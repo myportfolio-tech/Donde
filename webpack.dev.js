@@ -42,7 +42,7 @@ module: {
             use: [ 'html-loader' ]
         },
         {
-            test: /\.(png|jpg)$/,
+            test: /\.(png|jpg|svg)$/,
             use: {
                 loader: 'file-loader',
                 options: {
