@@ -65,9 +65,10 @@ const urlThree = newURL[2];
 
 console.log('URL One:' ,urlOne)
 console.log('URL Two:' ,urlTwo)
-console.log('URL Two:' ,urlThree)
+console.log('URL Three:' ,urlThree)
 
 const responseOne = await axios.get(urlOne);
+console.log(responseOne)
 const responseTwo = await axios.get(urlTwo);
 const responseThree = await axios.get(urlThree);
 

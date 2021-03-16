@@ -193,4 +193,20 @@ input[type="date"]:before {
 
 .button-image {
   width: 50px;
+  cursor: pointer;
+}
+
+.button-image:hover {
+  cursor: pointer;
+  width: 55px;
+}
+
+
+svg {
+  cursor: pointer;
+
+}
+
+svg:hover {
+  fill: $themeColor2;
 }
