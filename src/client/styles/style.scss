@@ -10,13 +10,11 @@ body {
 h1 {
     color: $themeColor1;
 }
-h2, h4 {
+h2 {
     color: $themeColor2;
-    height: 1em;
-
 }
 
-h3 {
+h3, h4 {
   color: $themeColor3;
 }
 
@@ -30,17 +28,8 @@ h3 {
 font-size: 25px;
 }
 
-.trip-info-window {
-  width: 250px;
-  height: 20px;
-  margin: 10px 10px 0 10px;
-  color: $themeColor2;
-}
 
-.trip-info {
-  display: flex;
-  flex-direction: row;
-}
+
 
 .search-box{
   width: 580px;
@@ -55,7 +44,7 @@ font-size: 25px;
   padding: 0px !important;
   text-align: inherit !important;
   text-decoration: none !important;
-  color: $themeColor3;
+  color: $themeColor2;
 }
 
 .main-container {
@@ -64,11 +53,9 @@ font-size: 25px;
 } 
 
 .label-and-info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 25px;
-  margin-bottom: 10px;
+  display: inline-block;
+  height: 40px;
+  // margin-bottom: 10px;
 }
 
 .left-container {
@@ -129,6 +116,7 @@ input[type="date"]:before {
   display: flex;
   height: 120px;
   overflow: hidden;
+  margin: 10px 0 10px 0;
 }
 
 .weather {
@@ -144,8 +132,20 @@ input[type="date"]:before {
 }
 
 
-.display-block {
-  height: 150px;
+.icon {
+   height: 120px;
+}
+
+
+.display-block-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 120px;
+  color: $themeColor2;
+  margin-left: 5px;
+
 }
 
 
@@ -184,12 +184,27 @@ input[type="date"]:before {
 
 .label {
   color: $themeColor3;
+  height: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
 }
 
 .trip-info {
   display: flex;
   flex-direction: column;
+  margin-left: 25px;
 }
+
+.trip-info-window {
+  width: 250px;
+  height: 20px;
+  margin-top: 10px;
+  margin-bottom:  10px;
+  color: $themeColor2;
+}
+
+
 
 .button-image {
   width: 50px;
@@ -209,4 +224,26 @@ svg {
 
 svg:hover {
   fill: $themeColor2;
+}
+
+
+.search-container {
+  margin: 35px 0 35px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $themeColor3;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: $themeColor3;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: $themeColor3;
 }
