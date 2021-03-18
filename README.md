@@ -37,19 +37,18 @@ The autocompleted location values are used to make serveral calls:
    ### Server Side
 
 Module: geonames.js
-
+{: .gitlab-orange}
 Module: imagesObject.js
 
 Module: weatherObject.js
 
 
-
+### GitLab Purple Heading
+{: .gitlab-purple}
 
 <div class="text-purple">
   This text is purple, <a href="#" class="text-inherit">including the link</a>
 </div>
-
-
 
 
 ```javascript
