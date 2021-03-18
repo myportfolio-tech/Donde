@@ -182,28 +182,35 @@ input[type="date"]:before {
   flex-direction: column;
 }
 
-.label {
-  color: $themeColor3;
-  height: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
 
-}
 
 .trip-info {
-  display: flex;
-  flex-direction: column;
+  margin-top: 15px;
+  display: inline-block;
   margin-left: 25px;
 }
+
+.trip-info h4{
+  line-height: 1em;
+  margin: 0;
+  
+}
+
 
 .trip-info-window {
   width: 250px;
   height: 20px;
   margin-top: 10px;
   margin-bottom:  10px;
+  margin-left: 15px;
   color: $themeColor2;
+
 }
 
+.trip-info-window h4{
+  line-height: 0.5em;
+  margin: 0;
+  }
 
 
 .button-image {
