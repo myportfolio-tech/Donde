@@ -3,6 +3,12 @@
 function getDepartureDatesfromInput(){
 
 const departing = document.getElementById('departure');
+const returning = document.getElementById('return');
+
+const minDate= new Date().toISOString().split('T')[0];
+departing.setAttribute('min', minDate);
+returning.setAttribute('min', minDate);
+
 let departureDate =  new Date(departing.value);
 const today = new Date();
 
@@ -22,6 +28,11 @@ function getReturnDatesfromInput(){
 
 const departing = document.getElementById('departure');
 const returning = document.getElementById('return');
+
+const minDate= new Date().toISOString().split('T')[0];
+departing.setAttribute('min', minDate);
+returning.setAttribute('min', minDate);
+
 
 //IF Departure Date is not set, set it to today's date
 if (! departing.value) {

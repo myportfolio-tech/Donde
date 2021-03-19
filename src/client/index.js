@@ -9,6 +9,7 @@ import './styles/carousel.css'
 import './styles/style.scss'
 
 
+
 export {
   passCoordinates,
   callPixabay,
