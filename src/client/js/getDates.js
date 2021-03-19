@@ -12,7 +12,7 @@ window1.textContent = GetDateOutput(departureDate);
 
 const daystillTrip = departureDate.getDate() - today.getDate()
 const window2 = document.getElementById('window2'); 
-window2.textContent = daystillTrip;
+window2.textContent = `${daystillTrip} days`;
 
 }
 
@@ -52,15 +52,16 @@ window3.textContent = GetDateOutput(returnDate);
 
 const tripLength = returnDate.getDate() - departureDate.getDate()
 const window4 = document.getElementById('window4');
-window4.textContent = tripLength;
+window4.textContent = `${tripLength} days`;
 
 }
 
 
 function GetDateOutput(passedDate){
     const departureMonth = passedDate.toLocaleString('default', { month: 'long' });
-    const departureDay = passedDate.getDay();
+    const departureDay = passedDate.getDate();
     
+
     return departureMonth.concat(" ").concat(departureDay)
 }
 
