@@ -3,11 +3,6 @@
 function getDepartureDatesfromInput(){
 
 const departing = document.getElementById('departure');
-const returning = document.getElementById('return');
-
-const minDate= new Date().toISOString().split('T')[0];
-departing.setAttribute('min', minDate);
-returning.setAttribute('min', minDate);
 
 let departureDate =  new Date(departing.value);
 const today = new Date();
@@ -24,14 +19,11 @@ window2.textContent = `${daystillTrip} days`;
 
 
 
+
 function getReturnDatesfromInput(){
 
 const departing = document.getElementById('departure');
 const returning = document.getElementById('return');
-
-const minDate= new Date().toISOString().split('T')[0];
-departing.setAttribute('min', minDate);
-returning.setAttribute('min', minDate);
 
 
 //IF Departure Date is not set, set it to today's date
@@ -68,6 +60,20 @@ window4.textContent = `${tripLength} days`;
 }
 
 
+function setDatesMins(){
+    
+    const departing = document.getElementById('departure');
+    const returning = document.getElementById('return');
+    
+    const minDate= new Date().toISOString().split('T')[0];
+    departing.setAttribute('min', minDate);
+    returning.setAttribute('min', minDate);
+    
+}
+    
+
+
+
 function GetDateOutput(passedDate){
     const departureMonth = passedDate.toLocaleString('default', { month: 'long' });
     const departureDay = passedDate.getDate();
@@ -77,4 +83,4 @@ function GetDateOutput(passedDate){
 }
 
 
-export {getDepartureDatesfromInput, getReturnDatesfromInput}
+export {getDepartureDatesfromInput, getReturnDatesfromInput, setDatesMins}

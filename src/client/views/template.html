@@ -70,7 +70,7 @@
             <div class="dates">
 
                 <div class="pickers">
-                    <input type="date" class="input-dates" id="departure" name="trip-start" placeholder="Departure" oninput="return Client.getDepartureDatesfromInput(event)">
+                    <input type="date" class="input-dates" id="departure" name="trip-start" placeholder="Departure" oninput="return Client.getDepartureDatesfromInput(event)" onclick=" return Client.setDatesMins(event)">
                     <input type="date" class="input-dates" id="return" name="trip-end" placeholder="Return"  oninput="return Client.getReturnDatesfromInput(event)">
                 </div>
                 

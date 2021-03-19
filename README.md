@@ -11,7 +11,11 @@ To get started, click on the search window and start typing.
 
 You may search for city, state, or country. 
 
-![Start Typing](user_experiece.gif)
+![Start Typing](user_experience01.gif)
+
+As of right now, the app displays the images - with author and tag info -, weather, and it allows you to pick trip dates.
+
+Further functionality could include Hotel and nearby search to be launched by the magnified glass search button. 
 
 
 
