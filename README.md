@@ -7,6 +7,10 @@ The app is for a user to search for any location and see weather information and
 ---
 ---
 ## User Experience
+To get started, click on the search window and start typing.
+
+You may search for city, state, or country. 
+
 ![Start Typing](user_experiece.gif)
 
 
