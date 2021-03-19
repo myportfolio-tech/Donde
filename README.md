@@ -1,13 +1,3 @@
-<style>
-H1{
-  color:#440a67;
-  }
-H2
-{color:DarkOrange;
-}
-</style>
-
-
 # Donde - Travel App
 ## Udacity Capstone Project
 
@@ -16,8 +6,14 @@ The app is for a user to search for any location and see weather information and
 
 ---
 ---
+## User Experience
+![Start Typing](user_experiece.gif)
 
 
+
+
+---
+---
 ## APIs Workflow
 
 The autocomplete search box is powered by Google [Place Autocomplete](https://developers.google.com/maps/documentation/places/web-service/autocomplete?hl=id) API.
