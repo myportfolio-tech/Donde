@@ -39,8 +39,7 @@ The autocompleted location values are used to make serveral calls:
     
     We call it with the country code and find cities within the country.
     
-    These cities are then userd, along with the country, to query Pixabay.
-
+    These cities are then used, along with the country, to query Pixabay.
 
 
 
@@ -50,26 +49,110 @@ The autocompleted location values are used to make serveral calls:
 ## Javascript 
    ### Server Side
 
-Module: geonames.js
-{: .gitlab-orange}
-Module: imagesObject.js
+### **Module:** _geonames.js_
+Takes the places autocomplete output, calls the GeoNames API if needed.
 
-Module: weatherObject.js
-
-
-### GitLab Purple Heading
-{: .gitlab-purple}
-
-<div class="text-purple">
-  This text is purple, <a href="#" class="text-inherit">including the link</a>
-</div>
+Returns the URLS for the Pixabay call.
 
 
-# Color Test Document
+```javascript
+// Geoname Call if Needed
+        geoURL = `http://api.geonames.org/searchJSON?
+        country=${req.body.code}&maxRows=10&&username=${username}`;
+
+        const geoResponse = await axios.get(geoURL)
+```
+The module also finds cities from the GeoName response and remoe empty spaces.
+
+```javascript
+// processResults()
+
+    for (const location of geoNamesResponse){
+
+        if (location.fclName == 'city, village,...' 
+        && locationfcodeName == 'capital of a political entity'){
+            cities.capital = location.name.split(' ').join('%20');
+            continue;
+        }
+
+      return  cities
+```
+The module returns a Pixabay url Array 
+
+```javascript
+return [`https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${req.body.city}+${req.body.state}&image_type=photo`, ...]}
+
+```
 
 
+### **Module:** _imagesObject.js_
 
+Inserts the Pixabay response into an array with image URL and properties.
+```javascript
+// createImagesObject()
+for (const image of fullResponse) {
+  
+          imageObject = {pictureURL: image.webformatURL, author: image.user, tags:image.tags}
+}
+```
+### **Module:** _weatherObject.js_
 
-## Second Heading
+Creates object with weather API results to pass to client-side.
+```javascript
+    weatherResults = {
+      description: weather['data'][0].weather.description,
+      temp: weather['data'][0].temp,
+      wind: weather['data'][0].wind_spd,
+      iconUrl: `https://www.weatherbit.io/static/img/icons/${weather['data'][0].weather.icon}.png`
+    }
+```
+   ### Client Side
 
-This is a test to see how the colors work.
+### **Module:** _autocomplete.js_
+
+Sets the search values as input properties and starts the API calling process
+```javascript
+    const searchInput = document.getElementById('search-box');
+    searchInput.setAttribute('data-lng', place.geometry.location.lng());
+            
+    searchInput.setAttribute('data-lat', place.geometry.location.lat());
+    setPros(place.address_components);
+    callMainApis()
+```
+
+### **Module:** _callAPIs.js_
+POST calls to server side and renders results.
+```javascript
+function callMainApis(){
+    passCoordinates();
+    callPixabay()
+}
+
+passCoordinates()
+    fetch('http://localhost:5000/weather', {
+        method: 'POST',
+    
+callPixabay()
+    fetch('http://localhost:5000/pixabay', {
+        method: 'POST',
+        renderImages(data)
+
+function renderImages(){
+  InnitialCarouselSetUp();
+}
+```
+### **Module:** _carousel.js_
+Sets up and renders the images carousel.
+
+Images are loaded via lazy load.
+```javascript
+const track = document.querySelector('.carousel__track');
+const currentSlide = track.querySelector('.current-slide');
+        
+lazyLoadImage(currentSlide);
+setAuthorTags(currentSlide);
+
+function lazyLoadImage(currentSlide){
+    currentSlide.firstChild.src = currentSlide.firstChild.dataset.src;
+}
+```
