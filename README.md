@@ -51,7 +51,12 @@ Module: weatherObject.js
 </div>
 
 
-```javascript
+# Color Test Document
+
+<style>H1{color:#440a67;;}</style>
+<style>H2{color:DarkOrange;}</style>
 
 
-         ```
+## Second Heading
+
+This is a test to see how the colors work.
