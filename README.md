@@ -1,3 +1,13 @@
+<style>
+H1{
+  color:#440a67;
+  }
+H2
+{color:DarkOrange;
+}
+</style>
+
+
 # Donde - Travel App
 ## Udacity Capstone Project
 
@@ -53,8 +63,7 @@ Module: weatherObject.js
 
 # Color Test Document
 
-<style>H1{color:#440a67;;}</style>
-<style>H2{color:DarkOrange;}</style>
+
 
 
 ## Second Heading
