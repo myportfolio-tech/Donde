@@ -1,0 +1,9 @@
+
+
+@mixin flex-centered_align($direction, $margin, $align, $justify){
+    display: flex;
+    flex-direction: $direction;
+    margin: $margin;
+    align-items: $align;
+    justify-content: $justify;
+}

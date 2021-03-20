@@ -1,0 +1,80 @@
+@import "./mixings";
+
+// Search Input
+.search-box{
+    width: 580px;
+    margin-bottom: 10px;
+    height: 35px;
+    border-radius: 24px !important;
+    border: 1px solid transparent !important;
+    font-family: inherit !important;
+    font-size: 20px;
+    outline: none !important;
+    color: $themeColor2;
+  }
+
+input[type="date"]:before {
+    content: attr(placeholder) !important;
+    color: $themeColor3;
+    margin-right: 0.5em;
+  }
+  input[type="date"]:focus:before,
+  input[type="date"]:valid:before {
+    content: "";
+  }
+
+
+// Images Info
+
+.label-and-info {
+  display: inline-block;
+  height: 40px;
+}
+
+
+.author {
+  padding: 5px;
+  color: $themeColor2;
+ 
+}
+
+.author-heading {
+  padding: 5px;
+  color: $themeColor3;
+}
+
+.tags {
+  padding: 5px;
+}
+
+
+// Trip Info
+.trip-info {
+  margin-top: 15px;
+  display: inline-block;
+  margin-left: 25px;
+}
+
+.trip-info h4{
+  line-height: 1em;
+  margin: 0;
+  
+}
+
+
+.trip-info-window {
+  width: 250px;
+  height: 20px;
+  margin-top: 10px;
+  margin-bottom:  10px;
+  margin-left: 15px;
+  color: $themeColor2;
+
+}
+
+.trip-info-window h4{
+  line-height: 0.5em;
+  margin: 0;
+  }
+
+

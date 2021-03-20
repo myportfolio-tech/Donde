@@ -1,4 +1,8 @@
+@import "./mixings";
 @import "./variables";
+@import "./widgets";
+@import "./mobile";
+
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@600&display=swap');
 
 
@@ -19,79 +23,45 @@ h3, h4 {
 }
 
 .main-header {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-left: 20%;
+
+  @include flex-centered_align(row, 0 0 0 20%, center, flex-start);
   font-family: inherit;
+  font-size: 25px;
 
-font-size: 25px;
 }
 
 
-
-
-.search-box{
-  width: 580px;
-  margin-bottom: 10px;
-  height: 35px;
-  border-radius: 24px !important;
-  border: 1px solid transparent !important;
-  font-family: inherit !important;
-  font-size: 20px;
-  outline: none !important;
-  overflow: visible !important;
-  padding: 0px !important;
-  text-align: inherit !important;
-  text-decoration: none !important;
-  color: $themeColor2;
-}
 
 .main-container {
-  display: flex;
-  flex-direction: row;
+
+  @include flex-centered_align(row, 0, flex-start, center);
+
 } 
 
-.label-and-info {
-  display: inline-block;
-  height: 40px;
-  // margin-bottom: 10px;
-}
-
 .left-container {
-  display: flex;
-  flex-direction: column;
+  
+  @include flex-centered_align(column, 0, center, center);
   width: 600px;
-  align-items: center;
+  
 }
 
 .right-container {
+  
+  @include flex-centered_align(column, 0 0 0 40px, center, center);
   display: flex;
   flex-direction: column;
   width: 300px;
-  margin-left: 40px;
   padding-left: 10px;
 }
 
 .top-display {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-centered_align(column, 0, center, center);
 }
 
-input[type="date"]:before {
-    content: attr(placeholder) !important;
-    color: $themeColor3;
-    margin-right: 0.5em;
-  }
-  input[type="date"]:focus:before,
-  input[type="date"]:valid:before {
-    content: "";
-  }
+
 
 .dates {
-  display: flex;
-  flex-direction: column;
+  @include flex-centered_align(column, 0 0 0 40px, center, center);
 }
 
 
@@ -104,12 +74,6 @@ input[type="date"]:before {
 .input-dates {
   width: 200px;
   margin-bottom: 10px;
-}
-
-.search-button {
-  width: 80px;
-  border-radius: 12px;
-  border: blue solid 4px;
 }
 
 .main-weather-container {
@@ -138,10 +102,7 @@ input[type="date"]:before {
 
 
 .display-block-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  @include flex-centered_align(column, 0, flex-start, center);
   height: 120px;
   color: $themeColor2;
   margin-left: 5px;
@@ -150,33 +111,19 @@ input[type="date"]:before {
 
 
 .image-info {
-  display: flex;
-  flex-direction: row;
+  @include flex-centered_align(column, 0, flex-start, stretch);
+
   padding: 5px;
-  align-items: center;
-  justify-content: stretch;
   height: 20px;
   width: 98%;
   margin-top: 10px;
   overflow: hidden;
 }
 
-.author {
-  padding: 5px;
-  color: $themeColor2;
- 
-}
 
-.author-heading {
-  padding: 5px;
-  color: $themeColor3;
-}
-
-.tags {
-  padding: 5px;
-}
 
 .pickers {
+  @include flex-centered_align(column, 0, center, center);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -184,49 +131,9 @@ input[type="date"]:before {
 
 
 
-.trip-info {
-  margin-top: 15px;
-  display: inline-block;
-  margin-left: 25px;
-}
-
-.trip-info h4{
-  line-height: 1em;
-  margin: 0;
-  
-}
-
-
-.trip-info-window {
-  width: 250px;
-  height: 20px;
-  margin-top: 10px;
-  margin-bottom:  10px;
-  margin-left: 15px;
-  color: $themeColor2;
-
-}
-
-.trip-info-window h4{
-  line-height: 0.5em;
-  margin: 0;
-  }
-
-
-.button-image {
-  width: 50px;
-  cursor: pointer;
-}
-
-.button-image:hover {
-  cursor: pointer;
-  width: 55px;
-}
-
 
 svg {
   cursor: pointer;
-
 }
 
 svg:hover {
@@ -235,10 +142,9 @@ svg:hover {
 
 
 .search-container {
+  @include flex-centered_align(row, 0, center, center);
+  
   margin: 35px 0 35px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100px;
 }
 

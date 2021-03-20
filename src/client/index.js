@@ -7,7 +7,9 @@ import {setPros} from './js/setProperties'
 import {InnitialCarouselSetUp, setSlidePosition, moveToSlide} from './js/carousel'
 import './styles/carousel.css'
 import './styles/style.scss'
-import './styles/mobile.scss'
+import './styles/_mobile.scss'
+
+
 
 
 
