@@ -1,20 +1,18 @@
 const path = require("path");
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
 
 mode: "production",
-devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    port: 9001,
-    open: 'firefox',
-    headers: {
-        'Cache-Control': 'no-store'
-      }
-  },
 entry: "./src/client/index.js",
+optimization: {
+    minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})]
+},
 output: {
     libraryTarget: "var",
     library: "Client",
@@ -42,12 +40,13 @@ module: {
             use: [ 'html-loader' ]
         },
         {
-            test: /\.(png|jpg)$/,
+            test: /\.(png|jpg|svg)$/,
             use: {
                 loader: 'file-loader',
                 options: {
                     name: "[name].[ext]",
-                    outputPath: "imgs",
+                    outputPath: "img/",
+                    publicPath: 'img/',
                     esModule: false
                 }
             }
@@ -58,6 +57,8 @@ plugins: [
     new HtmlWebPackPlugin({
         template: "./src/client/views/template.html",
         filename: "./index.html"
-    })
+    }),
+    new MiniCssExtractPlugin(),
+    new WorkboxPlugin.GenerateSW()
 ]
-}
+};

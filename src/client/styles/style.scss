@@ -111,7 +111,7 @@ h3, h4 {
 
 
 .image-info {
-  @include flex-centered_align(column, 0, flex-start, stretch);
+  @include flex-centered_align(row, 0, flex-start, stretch);
 
   padding: 5px;
   height: 20px;
