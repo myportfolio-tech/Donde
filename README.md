@@ -3,6 +3,34 @@
 
 The app is for a user to search for any location and see weather information and images of the location. 
 
+## Building & Runnin the app
+
+### &nbsp;&nbsp;&nbsp;&nbsp; *npm start*
+Starts the server on port 5000 as specified on .env file
+
+### &nbsp;&nbsp;&nbsp;&nbsp; *npm run build-dev*
+Builds the development dist folder - no minimization
+
+### &nbsp;&nbsp;&nbsp;&nbsp; *npm run build-prod*
+Builds the production dist folder
+
+### &nbsp;&nbsp;&nbsp;&nbsp; *npm run launch*
+Builds the production dist folder and starts the server on port 5000
+
+### &nbsp;&nbsp;&nbsp;&nbsp; *npm test*
+Run Jest test
+
+
+```json
+  "scripts": {
+    "start": "nodemon src/server/server.js",
+    "test": "jest",
+    "build-dev": "webpack  --config ./webpack.dev.js",
+    "build-dev-server": "webpack-dev-server  --config ./webpack.dev.js --open",
+    "build-prod": "webpack  --config ./webpack.prod.js",
+    "launch": "webpack --config ./webpack.prod.js && node src/server/server.js"
+  }
+```  
 
 ---
 ---
