@@ -5,6 +5,7 @@ import {activateAutoComplete} from './js/autocomplete'
 import {getDepartureDatesfromInput, getReturnDatesfromInput, setDatesMins} from './js/getDates'
 import {setPros} from './js/setProperties'
 import {InnitialCarouselSetUp, setSlidePosition, moveToSlide} from './js/carousel'
+import {furtherSearch} from './js/furtherSearch'
 import './styles/carousel.css'
 import './styles/style.scss'
 import './styles/_mobile.scss'
@@ -26,5 +27,6 @@ export {
   InnitialCarouselSetUp,
   setSlidePosition,
   moveToSlide,
-  setDatesMins
+  setDatesMins,
+  furtherSearch
 }
