@@ -4,11 +4,8 @@ import {InnitialCarouselSetUp} from './carousel'
 async function passCoordinates() {
     const inputBox = document.getElementById('search-box');
 
-
-
-    console.log(inputBox.dataset.lng);
-    console.log(inputBox.dataset.lat);
-
+    // console.log(inputBox.dataset.lng);
+    // console.log(inputBox.dataset.lat);
 
     
     fetch('http://localhost:5000/weather', {
@@ -34,7 +31,7 @@ async function passCoordinates() {
 
 async function callPixabay() {
     const inputBox = document.getElementById('search-box');
-    console.log('Calling Pixabay')
+    // console.log('Calling Pixabay')
 
     fetch('http://localhost:5000/pixabay', {
         method: 'POST',
@@ -54,7 +51,7 @@ async function callPixabay() {
 
     }).then(res => res.json()).then(data => {
         
-        console.log((data));
+        // console.log((data));
         renderImages(data); 
         
     });

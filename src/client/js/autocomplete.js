@@ -16,7 +16,7 @@ async function activateAutoComplete()
         autocomplete.addListener("place_changed", () => {
 
             const place = autocomplete.getPlace()
-            console.log('place ', place)
+            // console.log('place ', place)
             const searchInput = document.getElementById('search-box')
             
             searchInput.setAttribute('data-lng', place.geometry.location.lng());

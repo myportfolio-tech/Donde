@@ -5,7 +5,7 @@
 
 
 async function furtherSearch() {
-    console.log('Under Development');
+    console.log('Under Development - More Features Coming Soon');
 }
 
 export { furtherSearch }

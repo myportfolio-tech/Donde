@@ -31,7 +31,7 @@ function setPros(googleResponse)
                 {
                     searchInput.setAttribute('data-country', response.long_name.split(' ').join('%20'));
                     searchInput.setAttribute('data-countrycode', response.short_name.split(' ').join('%20'));
-                    console.log('Country', response.long_name.split(' ').join('%20'));
+                    // console.log('Country', response.long_name.split(' ').join('%20'));
                 }
 
         };

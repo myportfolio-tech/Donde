@@ -38,7 +38,7 @@ app.use(cors());
 
 app.post('/weather', async (req, res) => {
 
-console.log(req.body)
+// console.log(req.body)
 weather_url = `https://api.weatherbit.io/v2.0/current?lat=${req.body.lat}&lon=${req.body.lng}&units=I&key=${process.env.WEATHERBIT_KEY}`
    
   await axios
@@ -63,12 +63,12 @@ const urlOne = newURL[0];
 const urlTwo = newURL[1];
 const urlThree = newURL[2];
 
-console.log('URL One:' ,urlOne)
-console.log('URL Two:' ,urlTwo)
-console.log('URL Three:' ,urlThree)
+// console.log('URL One:' ,urlOne)
+// console.log('URL Two:' ,urlTwo)
+// console.log('URL Three:' ,urlThree)
 
 const responseOne = await axios.get(urlOne);
-console.log(responseOne)
+// console.log(responseOne)
 const responseTwo = await axios.get(urlTwo);
 const responseThree = await axios.get(urlThree);
 

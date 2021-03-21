@@ -15,12 +15,12 @@ async function geoNamesServices(req){
     
     if (req.body.city == '' && req.body.state == ''){
         geoURL = `http://api.geonames.org/searchJSON?country=${req.body.code}&maxRows=10&&username=${username}`;
-        console.log(geoURL)
+        // console.log(geoURL)
     
     const geoResponse = await axios.get(geoURL)
-    console.log(geoResponse.data.geonames);
+    // console.log(geoResponse.data.geonames);
     const cities = processResults(geoResponse.data.geonames);
-    console.log('CITIES', cities);
+    // console.log('CITIES', cities);
         
     return [`https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${cities.capital}+${req.body.country}&image_type=photo`, 
             `https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${cities.secondCity}+${req.body.country}&image_type=photo`,
@@ -33,10 +33,10 @@ async function geoNamesServices(req){
 else if(req.body.city == '' && req.body.state != '') {
 
     geoURL = `http://api.geonames.org/searchJSON?q=${req.body.state}&q=${req.body.country}&maxRows=10&username=${username}`;
-    console.log(geoURL);
+    // console.log(geoURL);
 
     const geoResponse = await axios.get(geoURL)
-    console.log(geoResponse.data.geonames);
+    // console.log(geoResponse.data.geonames);
     const cities = processResults(geoResponse.data.geonames);
 
         if (cities.capital != null){
