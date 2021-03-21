@@ -184,3 +184,25 @@ function lazyLoadImage(currentSlide){
     currentSlide.firstChild.src = currentSlide.firstChild.dataset.src;
 }
 ```
+
+## What's Next?
+### Future features and improvements
+Right now the search features are launched directly from the autocomplete search box. 
+The magnified glass serach icon does nothing.
+
+We would like to add some features and fine-tune some aspects of the app.
+
+### &nbsp;&nbsp;&nbsp;&nbsp; *Hotels Search*
+We would like to add additional APIs to provide access to hotels and other lodging resources.
+
+### &nbsp;&nbsp;&nbsp;&nbsp; *Nearby Search*
+Using the GeoNames API, we would like to display cities & countries in the region the user searched for.
+
+### &nbsp;&nbsp;&nbsp;&nbsp; *Order GeoNames and Pixabay Outputs*
+We want to implement server-side fetures:
+* return Pixabay images organized by popularity & relevance.
+* return cities from GeoNames organized by population and relevance.
+* implement historical weather data for range of dates so users can plan trips better.
+
+&nbsp;&nbsp;&nbsp;&nbsp; Note: Historical data for a range of dates is a paid service.
+
